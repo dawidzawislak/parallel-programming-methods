@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
     int E = atoi(argv[2]); // liczba krawędzi
     char *filename = argv[3];
 
-    srand(time(NULL));
+    srand(42); // stały seed -> zawsze ten sam graf
 
     FILE *f = fopen(filename, "w");
     if (!f) { perror("fopen"); return 1; }

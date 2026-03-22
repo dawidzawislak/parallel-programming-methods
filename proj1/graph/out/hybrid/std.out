@@ -1,0 +1,19 @@
+Nodes: 2
+MPI tasks: 2
+OMP threads: 4
+Loaded graph with 1 nodes and 2 edges
+Elapsed time = 0.026525 s
+Total edges visited = 327680
+Throughput = 12.35 million edges/s
+Loaded graph with 1 nodes and 2 edges
+Elapsed time = 0.563185 s
+Total edges visited = 13107200
+Throughput = 23.27 million edges/s
+Loaded graph with 1 nodes and 2 edges
+Elapsed time = 3.351676 s
+Total edges visited = 52428800
+Throughput = 15.64 million edges/s
+Loaded graph with 1 nodes and 2 edges
+Elapsed time = 8.236447 s
+Total edges visited = 104857600
+Throughput = 12.73 million edges/s

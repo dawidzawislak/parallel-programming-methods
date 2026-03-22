@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     MPI_Bcast(Z, N, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
     if (rank == 0)
-        printf("NBody MPI+OMP: %d cząstek, %d iteracji, %d procesów\n", N, iterations, size);
+        printf("NBody MPI+OMP: %d particles, %d iterations, %d processes\n", N, iterations, size);
 
     double dt = 0.001;
 

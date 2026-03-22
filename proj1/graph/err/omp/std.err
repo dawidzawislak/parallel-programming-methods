@@ -1,0 +1,9 @@
+ openmpi/5.0.2-gcc-13.2.0 unloaded.
+ openmpi/5.0.2-gcc-13.2.0 loaded.
+free(): invalid next size (normal)
+[ac0064:3984756] *** Process received signal ***
+[ac0064:3984756] Signal: Aborted (6)
+[ac0064:3984756] Signal code:  (-6)
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 19654703.0 ON ac0064 CANCELLED AT 2026-03-22T16:01:09 ***
+slurmstepd: error: *** JOB 19654703 ON ac0064 CANCELLED AT 2026-03-22T16:01:09 ***

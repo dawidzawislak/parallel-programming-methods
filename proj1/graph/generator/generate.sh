@@ -1,7 +1,7 @@
 #!/bin/bash
 
-declare -a nodes=(4096 8192 32768 65536)
-declare -a edges=(32768 131072 524288 1048576)
+declare -a nodes=(500000 1000000 2000000 3000000)
+declare -a edges=(200000000 400000000 800000000 1200000000)
 
 for i in ${!nodes[@]}; do
     N=${nodes[i]}
