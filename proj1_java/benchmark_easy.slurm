@@ -25,3 +25,4 @@ MY_IP=$(hostname -i | awk '{print $1}')
 # Pamiętaj: -cp musi zawierać pcj.jar i bieżący katalog (.)
 srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. Graph500 pcj_nodes.txt 1048576 32
 srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. MolDyn pcj_nodes.txt 131072 100
+srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. MonteCarlo pcj_nodes.txt 1000000
