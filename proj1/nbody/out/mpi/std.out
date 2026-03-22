@@ -1,0 +1,19 @@
+Nodes: 8
+MPI tasks: 8
+OMP threads: 1
+NBody MPI+OMP: 4000 cząstek, 50 iteracji, 8 procesów
+Total interactions = 800000000
+Elapsed time = 1.932002 s
+Throughput = 414.08 million interactions/s
+NBody MPI+OMP: 6000 cząstek, 75 iteracji, 8 procesów
+Total interactions = 2700000000
+Elapsed time = 6.439535 s
+Throughput = 419.28 million interactions/s
+NBody MPI+OMP: 9000 cząstek, 100 iteracji, 8 procesów
+Total interactions = 8100000000
+Elapsed time = 19.510775 s
+Throughput = 415.16 million interactions/s
+NBody MPI+OMP: 12000 cząstek, 100 iteracji, 8 procesów
+Total interactions = 14400000000
+Elapsed time = 34.648913 s
+Throughput = 415.60 million interactions/s

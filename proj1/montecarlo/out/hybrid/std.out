@@ -1,0 +1,19 @@
+Nodes: 2
+MPI tasks: 2
+OMP threads: 4
+Estimated Pi = 3.141612632000
+Total points = 1000000000
+Elapsed time = 1.646546 s
+Throughput = 607.33 million points/s
+Estimated Pi = 3.141598341333
+Total points = 3000000000
+Elapsed time = 4.983762 s
+Throughput = 601.95 million points/s
+Estimated Pi = 3.141585166000
+Total points = 8000000000
+Elapsed time = 13.246966 s
+Throughput = 603.91 million points/s
+Estimated Pi = 3.141586520000
+Total points = 20000000000
+Elapsed time = 33.007665 s
+Throughput = 605.92 million points/s
