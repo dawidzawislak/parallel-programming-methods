@@ -1,0 +1,2 @@
+Starting at 2026-03-23_14-58-32-709
+Output will be saved to ../proj1_results/run_at_2026-03-23_14-58-32-709
