@@ -56,4 +56,4 @@ fi
 #srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. Graph500 pcj_nodes.txt 1048576 32
 #srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. MolDyn pcj_nodes.txt 131072 100
 #srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. MonteCarlo pcj_nodes.txt 1000000
-#srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. Graph500FromFile pcj_nodes.txt ../proj1/graph/generator/graphs/graph1.txt 0
+#srun java -Dpcj.network.address=$MY_IP -cp pcj.jar:. Graph500FromFile pcj_nodes.txt ../proj1/graph/generator/graphs/graph4.txt 0

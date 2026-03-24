@@ -7,10 +7,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.BitSet;
+import java.util.StringTokenizer;
 
 @RegisterStorage(Graph500FromFile.Shared.class)
 public class Graph500FromFile implements StartPoint {
+
+    private static final int[] EMPTY_INT_ARRAY = new int[0];
 
     @Storage(Graph500FromFile.class)
     enum Shared {
@@ -44,69 +48,92 @@ public class Graph500FromFile implements StartPoint {
         inboxes = new int[numThreads][];
         activeThreads = new boolean[numThreads];
 
-        Map<Integer, List<Integer>> localGraph = new HashMap<>();
-
         if (myId == 0) {
             System.out.println("Wczytywanie grafu z pliku: " + graphFilePath);
         }
         PCJ.barrier();
 
-        GraphMetadata metadata = loadGraphPartition(graphFilePath, myId, numThreads, localGraph);
+        GraphData graphData = loadGraphPartition(graphFilePath, myId, numThreads);
 
         PCJ.barrier();
         if (myId == 0) {
-            System.out.println("Wczytywanie zakonczone. Vertices: " + metadata.vertices + ", Edges: " + metadata.edges);
+            System.out.println("Wczytywanie zakonczone. Vertices: " + graphData.vertices + ", Edges: " + graphData.edges);
             System.out.println("Rozpoczynam propagacje BFS od wierzcholka: " + bfsSource);
         }
 
         long startTime = System.nanoTime();
 
-        Set<Integer> visitedLocal = new HashSet<>();
-        Queue<Integer> localFrontier = new LinkedList<>();
+        BitSet visitedLocal = new BitSet(graphData.localVertexCount);
+        IntArrayQueue localFrontier = new IntArrayQueue(Math.max(16, graphData.localVertexCount / 8));
 
-        if (Math.floorMod(bfsSource, numThreads) == myId) {
+        if (bfsSource >= 0 && bfsSource < graphData.vertices && ownerId(bfsSource, numThreads) == myId) {
+            int sourceLocalIndex = localIndex(bfsSource, myId, numThreads);
+            visitedLocal.set(sourceLocalIndex);
             localFrontier.add(bfsSource);
-            visitedLocal.add(bfsSource);
         }
 
         int level = 0;
         boolean globalRunning = true;
 
         while (globalRunning) {
-            List<Integer>[] outboxes = new ArrayList[numThreads];
+            IntArrayList[] outboxes = new IntArrayList[numThreads];
             for (int i = 0; i < numThreads; i++) {
-                outboxes[i] = new ArrayList<>();
+                outboxes[i] = new IntArrayList();
             }
 
             boolean imActive = !localFrontier.isEmpty();
 
             while (!localFrontier.isEmpty()) {
                 int u = localFrontier.poll();
-                List<Integer> neighbors = localGraph.getOrDefault(u, Collections.emptyList());
+                int uLocalIndex = localIndex(u, myId, numThreads);
+                if (uLocalIndex < 0 || uLocalIndex >= graphData.localVertexCount) {
+                    continue;
+                }
 
-                for (int v : neighbors) {
-                    int ownerId = Math.floorMod(v, numThreads);
-                    outboxes[ownerId].add(v);
+                int start = graphData.offsets[uLocalIndex];
+                int end = graphData.offsets[uLocalIndex + 1];
+
+                for (int idx = start; idx < end; idx++) {
+                    int v = graphData.adjacency[idx];
+                    int vOwnerId = ownerId(v, numThreads);
+
+                    if (vOwnerId == myId) {
+                        int vLocalIndex = localIndex(v, myId, numThreads);
+                        if (vLocalIndex >= 0 && vLocalIndex < graphData.localVertexCount && !visitedLocal.get(vLocalIndex)) {
+                            visitedLocal.set(vLocalIndex);
+                            localFrontier.add(v);
+                            imActive = true;
+                        }
+                    } else {
+                        outboxes[vOwnerId].add(v);
+                    }
                 }
             }
 
             for (int p = 0; p < numThreads; p++) {
-                int[] message = outboxes[p].stream().mapToInt(i -> i).toArray();
+                int[] message = outboxes[p].toArray();
                 PCJ.put(message, p, Shared.inboxes, myId);
             }
 
             PCJ.barrier();
 
             for (int p = 0; p < numThreads; p++) {
-                if (inboxes[p] != null) {
-                    for (int v : inboxes[p]) {
-                        if (!visitedLocal.contains(v)) {
-                            visitedLocal.add(v);
+                int[] incoming = inboxes[p];
+                if (incoming != null && incoming.length > 0) {
+                    for (int v : incoming) {
+                        if (v < 0 || v >= graphData.vertices || ownerId(v, numThreads) != myId) {
+                            continue;
+                        }
+
+                        int localV = localIndex(v, myId, numThreads);
+                        if (!visitedLocal.get(localV)) {
+                            visitedLocal.set(localV);
                             localFrontier.add(v);
                             imActive = true;
                         }
                     }
                 }
+                inboxes[p] = null;
             }
 
             for (int p = 0; p < numThreads; p++) {
@@ -134,49 +161,127 @@ public class Graph500FromFile implements StartPoint {
         }
     }
 
-    private static GraphMetadata loadGraphPartition(String path,
-                                                    int myId,
-                                                    int numThreads,
-                                                    Map<Integer, List<Integer>> localGraph) throws IOException {
+    private static GraphData loadGraphPartition(String path,
+                                                int myId,
+                                                int numThreads) throws IOException {
+        GraphMetadata metadata = readMetadata(path);
+        int localVertexCount = localVertexCount(metadata.vertices, myId, numThreads);
+        int[] degree = new int[localVertexCount];
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            reader.readLine();
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                int[] edge = parseEdge(line);
+                if (edge == null) {
+                    continue;
+                }
+
+                int u = edge[0];
+                int v = edge[1];
+                if (u < 0 || v < 0 || u >= metadata.vertices || v >= metadata.vertices) {
+                    continue;
+                }
+
+                if (ownerId(u, numThreads) == myId) {
+                    degree[localIndex(u, myId, numThreads)]++;
+                }
+                if (ownerId(v, numThreads) == myId) {
+                    degree[localIndex(v, myId, numThreads)]++;
+                }
+            }
+        }
+
+        int[] offsets = new int[localVertexCount + 1];
+        for (int i = 0; i < localVertexCount; i++) {
+            offsets[i + 1] = offsets[i] + degree[i];
+        }
+
+        int[] adjacency = new int[offsets[localVertexCount]];
+        int[] writePos = Arrays.copyOf(offsets, localVertexCount);
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            reader.readLine();
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                int[] edge = parseEdge(line);
+                if (edge == null) {
+                    continue;
+                }
+
+                int u = edge[0];
+                int v = edge[1];
+                if (u < 0 || v < 0 || u >= metadata.vertices || v >= metadata.vertices) {
+                    continue;
+                }
+
+                if (ownerId(u, numThreads) == myId) {
+                    int uLocal = localIndex(u, myId, numThreads);
+                    adjacency[writePos[uLocal]++] = v;
+                }
+                if (ownerId(v, numThreads) == myId) {
+                    int vLocal = localIndex(v, myId, numThreads);
+                    adjacency[writePos[vLocal]++] = u;
+                }
+            }
+        }
+
+        return new GraphData(metadata.vertices, metadata.edges, localVertexCount, offsets, adjacency);
+    }
+
+    private static GraphMetadata readMetadata(String path) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String header = reader.readLine();
             if (header == null) {
                 throw new IOException("Plik grafu jest pusty: " + path);
             }
 
-            String[] headerParts = header.trim().split("\\s+");
-            if (headerParts.length < 2) {
+            StringTokenizer tokenizer = new StringTokenizer(header);
+            if (tokenizer.countTokens() < 2) {
                 throw new IOException("Nieprawidlowy naglowek grafu (oczekiwano: <V> <E>): " + header);
             }
 
-            int vertices = Integer.parseInt(headerParts[0]);
-            long edges = Long.parseLong(headerParts[1]);
-
-            String line;
-            while ((line = reader.readLine()) != null) {
-                line = line.trim();
-                if (line.isEmpty()) {
-                    continue;
-                }
-
-                String[] parts = line.split("\\s+");
-                if (parts.length < 2) {
-                    continue;
-                }
-
-                int u = Integer.parseInt(parts[0]);
-                int v = Integer.parseInt(parts[1]);
-
-                if (Math.floorMod(u, numThreads) == myId) {
-                    localGraph.computeIfAbsent(u, key -> new ArrayList<>()).add(v);
-                }
-                if (Math.floorMod(v, numThreads) == myId) {
-                    localGraph.computeIfAbsent(v, key -> new ArrayList<>()).add(u);
-                }
-            }
-
+            int vertices = Integer.parseInt(tokenizer.nextToken());
+            long edges = Long.parseLong(tokenizer.nextToken());
             return new GraphMetadata(vertices, edges);
         }
+    }
+
+    private static int[] parseEdge(String line) {
+        if (line == null) {
+            return null;
+        }
+
+        String trimmed = line.trim();
+        if (trimmed.isEmpty()) {
+            return null;
+        }
+
+        StringTokenizer tokenizer = new StringTokenizer(trimmed);
+        if (tokenizer.countTokens() < 2) {
+            return null;
+        }
+
+        int u = Integer.parseInt(tokenizer.nextToken());
+        int v = Integer.parseInt(tokenizer.nextToken());
+        return new int[] {u, v};
+    }
+
+    private static int ownerId(int vertex, int numThreads) {
+        return Math.floorMod(vertex, numThreads);
+    }
+
+    private static int localIndex(int vertex, int myId, int numThreads) {
+        return Math.floorDiv(vertex - myId, numThreads);
+    }
+
+    private static int localVertexCount(int vertices, int myId, int numThreads) {
+        if (myId >= vertices) {
+            return 0;
+        }
+        return ((vertices - 1 - myId) / numThreads) + 1;
     }
 
     private static class GraphMetadata {
@@ -186,6 +291,92 @@ public class Graph500FromFile implements StartPoint {
         GraphMetadata(int vertices, long edges) {
             this.vertices = vertices;
             this.edges = edges;
+        }
+    }
+
+    private static class GraphData {
+        final int vertices;
+        final long edges;
+        final int localVertexCount;
+        final int[] offsets;
+        final int[] adjacency;
+
+        GraphData(int vertices, long edges, int localVertexCount, int[] offsets, int[] adjacency) {
+            this.vertices = vertices;
+            this.edges = edges;
+            this.localVertexCount = localVertexCount;
+            this.offsets = offsets;
+            this.adjacency = adjacency;
+        }
+    }
+
+    private static class IntArrayList {
+        private int[] data;
+        private int size;
+
+        IntArrayList() {
+            this.data = new int[16];
+            this.size = 0;
+        }
+
+        void add(int value) {
+            if (size == data.length) {
+                data = Arrays.copyOf(data, data.length * 2);
+            }
+            data[size++] = value;
+        }
+
+        int[] toArray() {
+            if (size == 0) {
+                return EMPTY_INT_ARRAY;
+            }
+            return Arrays.copyOf(data, size);
+        }
+    }
+
+    private static class IntArrayQueue {
+        private int[] data;
+        private int head;
+        private int tail;
+        private int size;
+
+        IntArrayQueue(int initialCapacity) {
+            int capacity = Math.max(4, initialCapacity);
+            this.data = new int[capacity];
+            this.head = 0;
+            this.tail = 0;
+            this.size = 0;
+        }
+
+        void add(int value) {
+            if (size == data.length) {
+                grow();
+            }
+
+            data[tail] = value;
+            tail = (tail + 1) % data.length;
+            size++;
+        }
+
+        int poll() {
+            int value = data[head];
+            head = (head + 1) % data.length;
+            size--;
+            return value;
+        }
+
+        boolean isEmpty() {
+            return size == 0;
+        }
+
+        private void grow() {
+            int[] expanded = new int[data.length * 2];
+            for (int i = 0; i < size; i++) {
+                expanded[i] = data[(head + i) % data.length];
+            }
+            data = expanded;
+            head = 0;
+            tail = size;
         }
     }
 }
