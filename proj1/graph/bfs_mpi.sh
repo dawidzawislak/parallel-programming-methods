@@ -6,6 +6,7 @@
 #SBATCH --account=plgmpr26-cpu
 #SBATCH --partition=plgrid
 #SBATCH --job-name=bfs_mpi
+#SBATCH --mem=20G
 #SBATCH --output=out/mpi/std.out
 #SBATCH --error=err/mpi/std.err
 

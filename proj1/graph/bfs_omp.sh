@@ -6,6 +6,7 @@
 #SBATCH --account=plgmpr26-cpu
 #SBATCH --partition=plgrid
 #SBATCH --job-name=bfs_omp
+#SBATCH --mem=20G
 #SBATCH --output=out/omp/std.out
 #SBATCH --error=err/omp/std.err
 

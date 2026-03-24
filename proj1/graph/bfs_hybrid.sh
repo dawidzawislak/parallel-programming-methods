@@ -6,6 +6,7 @@
 #SBATCH --account=plgmpr26-cpu
 #SBATCH --partition=plgrid
 #SBATCH --job-name=bfs_hybrid
+#SBATCH --mem=20G
 #SBATCH --output=out/hybrid/std.out
 #SBATCH --error=err/hybrid/std.err
 

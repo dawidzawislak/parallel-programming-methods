@@ -1,0 +1,8 @@
+Generating graph graphs/graph1.txt: N=500000, E=200000000
+Wygenerowano R-MAT graf: graphs/graph1.txt (500000 wierzchołków, 200000000 krawędzi)
+Generating graph graphs/graph2.txt: N=1000000, E=400000000
+Wygenerowano R-MAT graf: graphs/graph2.txt (1000000 wierzchołków, 400000000 krawędzi)
+Generating graph graphs/graph3.txt: N=2000000, E=800000000
+Wygenerowano R-MAT graf: graphs/graph3.txt (2000000 wierzchołków, 800000000 krawędzi)
+Generating graph graphs/graph4.txt: N=3000000, E=1200000000
+Wygenerowano R-MAT graf: graphs/graph4.txt (3000000 wierzchołków, 1200000000 krawędzi)

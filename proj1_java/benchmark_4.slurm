@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=pcj_bench
-#SBATCH --nodes=2
+#SBATCH --nodes=8
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=1
 #SBATCH --time=01:00:00
 #SBATCH --partition=plgrid
 #SBATCH --account=plgmpr26-cpu
