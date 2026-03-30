@@ -1,0 +1,25 @@
+ java/11.0.2 loaded.
+Mar 30, 2026 3:08:02 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:08:03 PM org.pcj.internal.InternalPCJ start
+INFO: Starting Graph500FromFile with 8 threads (on 4 nodes)...
+Mar 30, 2026 3:08:23 PM org.pcj.internal.InternalPCJ start
+INFO: Completed Graph500FromFile with 8 threads (on 4 nodes) after 0h 0m 20s 267ms.
+Mar 30, 2026 3:08:23 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:08:24 PM org.pcj.internal.InternalPCJ start
+INFO: Starting Graph500FromFile with 8 threads (on 4 nodes)...
+Mar 30, 2026 3:09:45 PM org.pcj.internal.InternalPCJ start
+INFO: Completed Graph500FromFile with 8 threads (on 4 nodes) after 0h 1m 21s 613ms.
+Mar 30, 2026 3:09:46 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:09:46 PM org.pcj.internal.InternalPCJ start
+INFO: Starting Graph500FromFile with 8 threads (on 4 nodes)...
+Mar 30, 2026 3:13:06 PM org.pcj.internal.InternalPCJ start
+INFO: Completed Graph500FromFile with 8 threads (on 4 nodes) after 0h 3m 20s 58ms.
+Mar 30, 2026 3:13:07 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:13:07 PM org.pcj.internal.InternalPCJ start
+INFO: Starting Graph500FromFile with 8 threads (on 4 nodes)...
+Mar 30, 2026 3:18:57 PM org.pcj.internal.InternalPCJ start
+INFO: Completed Graph500FromFile with 8 threads (on 4 nodes) after 0h 5m 49s 996ms.

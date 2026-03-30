@@ -1,0 +1,32 @@
+Nodes: 2
+MPI tasks: 2
+OMP threads: 4
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./bfs     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph1.txt 
+Loaded graph with 100000 nodes and 40000000 edges
+Elapsed time = 0.391377 s
+Total edges visited = 40000000
+Throughput = 102.20 million edges/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./bfs     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph2.txt 
+Loaded graph with 500000 nodes and 200000000 edges
+Elapsed time = 1.942893 s
+Total edges visited = 200000000
+Throughput = 102.94 million edges/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./bfs     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph3.txt 
+Loaded graph with 1000000 nodes and 400000000 edges
+Elapsed time = 4.297074 s
+Total edges visited = 400000000
+Throughput = 93.09 million edges/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./bfs     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph4.txt 
+Loaded graph with 2000000 nodes and 800000000 edges
+Elapsed time = 8.689399 s
+Total edges visited = 800000000
+Throughput = 92.07 million edges/s
+BFS benchmark completed.

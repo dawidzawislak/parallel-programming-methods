@@ -1,0 +1,74 @@
+Using temporary directory: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     4000     50 
+
+MolDyn: Symulacja 4000 czastek na 8 watkach przez 50 iteracji.
+MolDyn Zakonczony! Czas calkowity: 1.580 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     5500     60 
+
+MolDyn: Symulacja 5500 czastek na 8 watkach przez 60 iteracji.
+MolDyn Zakonczony! Czas calkowity: 3.158 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     7000     70 
+
+MolDyn: Symulacja 7000 czastek na 8 watkach przez 70 iteracji.
+MolDyn Zakonczony! Czas calkowity: 5.204 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     8500     80 
+
+MolDyn: Symulacja 8500 czastek na 8 watkach przez 80 iteracji.
+MolDyn Zakonczony! Czas calkowity: 8.214 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     10000     90 
+
+MolDyn: Symulacja 10000 czastek na 8 watkach przez 90 iteracji.
+MolDyn Zakonczony! Czas calkowity: 12.211 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     11500     100 
+
+MolDyn: Symulacja 11500 czastek na 8 watkach przez 100 iteracji.
+MolDyn Zakonczony! Czas calkowity: 17.529 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     13000     100 
+
+MolDyn: Symulacja 13000 czastek na 8 watkach przez 100 iteracji.
+MolDyn Zakonczony! Czas calkowity: 22.028 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     14500     100 
+
+MolDyn: Symulacja 14500 czastek na 8 watkach przez 100 iteracji.
+MolDyn Zakonczony! Czas calkowity: 27.595 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     16000     100 
+
+MolDyn: Symulacja 16000 czastek na 8 watkach przez 100 iteracji.
+MolDyn Zakonczony! Czas calkowity: 32.861 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     17500     100 
+
+MolDyn: Symulacja 17500 czastek na 8 watkach przez 100 iteracji.
+MolDyn Zakonczony! Czas calkowity: 39.129 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     19000     100 
+
+MolDyn: Symulacja 19000 czastek na 8 watkach przez 100 iteracji.
+MolDyn Zakonczony! Czas calkowity: 47.727 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.72     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715866.txt     20000     100 
+
+MolDyn: Symulacja 20000 czastek na 8 watkach przez 100 iteracji.
+MolDyn Zakonczony! Czas calkowity: 50.982 s
+Molecular Dynamics benchmark completed.

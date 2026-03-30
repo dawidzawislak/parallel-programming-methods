@@ -1,0 +1,73 @@
+ java/11.0.2 loaded.
+Mar 30, 2026 3:08:02 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:08:02 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:08:07 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 0m 5s 257ms.
+Mar 30, 2026 3:08:08 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:08:08 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:08:26 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 0m 17s 690ms.
+Mar 30, 2026 3:08:26 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:08:26 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:08:56 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 0m 30s 223ms.
+Mar 30, 2026 3:08:57 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:08:57 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:09:39 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 0m 42s 784ms.
+Mar 30, 2026 3:09:40 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:09:40 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:10:35 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 0m 55s 325ms.
+Mar 30, 2026 3:10:35 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:10:36 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:11:43 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 1m 7s 864ms.
+Mar 30, 2026 3:11:44 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:11:44 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:13:04 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 1m 20s 449ms.
+Mar 30, 2026 3:13:05 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:13:05 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:14:48 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 1m 43s 298ms.
+Mar 30, 2026 3:14:48 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:14:49 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:16:34 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 1m 45s 552ms.
+Mar 30, 2026 3:16:34 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:16:34 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:18:33 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 1m 58s 115ms.
+Mar 30, 2026 3:18:33 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:18:33 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:20:44 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 2m 10s 953ms.
+Mar 30, 2026 3:20:44 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:20:44 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MonteCarlo with 8 threads (on 1 node)...
+Mar 30, 2026 3:23:14 PM org.pcj.internal.InternalPCJ start
+INFO: Completed MonteCarlo with 8 threads (on 1 node) after 0h 2m 29s 793ms.

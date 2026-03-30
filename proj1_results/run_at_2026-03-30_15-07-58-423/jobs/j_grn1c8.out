@@ -1,0 +1,47 @@
+Using temporary directory: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.112     -cp     pcj.jar:.     Graph500FromFile     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715862.txt     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph1.txt     0 
+Loading graph: /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph1.txt
+Graph loaded. Vertices: 100000, Edges: 40000000
+Starting BFS from: 0
+Finished BFS level 1
+Finished BFS level 2
+Finished BFS level 3
+Finished BFS level 4
+BFS finished. Levels: 4 Time: 0.789 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.112     -cp     pcj.jar:.     Graph500FromFile     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715862.txt     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph2.txt     0 
+Loading graph: /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph2.txt
+Graph loaded. Vertices: 500000, Edges: 200000000
+Starting BFS from: 0
+Finished BFS level 1
+Finished BFS level 2
+Finished BFS level 3
+Finished BFS level 4
+BFS finished. Levels: 4 Time: 3.829 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.112     -cp     pcj.jar:.     Graph500FromFile     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715862.txt     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph3.txt     0 
+Loading graph: /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph3.txt
+Graph loaded. Vertices: 1000000, Edges: 400000000
+Starting BFS from: 0
+Finished BFS level 1
+Finished BFS level 2
+Finished BFS level 3
+Finished BFS level 4
+BFS finished. Levels: 4 Time: 8.008 s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.112     -cp     pcj.jar:.     Graph500FromFile     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715862.txt     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph4.txt     0 
+Loading graph: /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph4.txt
+Graph loaded. Vertices: 2000000, Edges: 800000000
+Starting BFS from: 0
+Finished BFS level 1
+Finished BFS level 2
+Finished BFS level 3
+Finished BFS level 4
+Finished BFS level 5
+BFS finished. Levels: 5 Time: 16.002 s
+Graph benchmark completed.

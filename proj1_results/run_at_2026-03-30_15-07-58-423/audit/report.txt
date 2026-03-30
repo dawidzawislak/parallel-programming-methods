@@ -1,0 +1,355 @@
+==== audit started ====
+RUN_DIR=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423
+JOBS_TSV=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs.tsv
+MANIFEST_TSV=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/manifest.tsv
+
+Submitted jobs:
+job_name	job_id	stdout	stderr	script_rel
+c_grn8c1	19715847	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn8c1.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn8c1.err	proj1/graph/bfs_main.sh
+c_grn4c2	19715848	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn4c2.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn4c2.err	proj1/graph/bfs_main.sh
+c_grn2c4	19715849	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn2c4.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn2c4.err	proj1/graph/bfs_main.sh
+c_grn1c8	19715850	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn1c8.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn1c8.err	proj1/graph/bfs_main.sh
+c_mnn8c1	19715851	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn8c1.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn8c1.err	proj1/montecarlo/mc_main.sh
+c_mnn4c2	19715852	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn4c2.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn4c2.err	proj1/montecarlo/mc_main.sh
+c_mnn2c4	19715853	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn2c4.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn2c4.err	proj1/montecarlo/mc_main.sh
+c_mnn1c8	19715854	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn1c8.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn1c8.err	proj1/montecarlo/mc_main.sh
+c_nbn8c1	19715855	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn8c1.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn8c1.err	proj1/nbody/nbody_main.sh
+c_nbn4c2	19715856	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn4c2.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn4c2.err	proj1/nbody/nbody_main.sh
+c_nbn2c4	19715857	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn2c4.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn2c4.err	proj1/nbody/nbody_main.sh
+c_nbn1c8	19715858	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn1c8.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn1c8.err	proj1/nbody/nbody_main.sh
+j_grn8c1	19715859	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn8c1.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn8c1.err	proj1_java/graph_benchmark.slurm
+j_grn4c2	19715860	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn4c2.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn4c2.err	proj1_java/graph_benchmark.slurm
+j_grn2c4	19715861	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn2c4.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn2c4.err	proj1_java/graph_benchmark.slurm
+j_grn1c8	19715862	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn1c8.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn1c8.err	proj1_java/graph_benchmark.slurm
+j_nbn8c1	19715863	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn8c1.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn8c1.err	proj1_java/moldyn_benchmark.slurm
+j_nbn4c2	19715864	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn4c2.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn4c2.err	proj1_java/moldyn_benchmark.slurm
+j_nbn2c4	19715865	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn2c4.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn2c4.err	proj1_java/moldyn_benchmark.slurm
+j_nbn1c8	19715866	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn1c8.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn1c8.err	proj1_java/moldyn_benchmark.slurm
+j_mcn8c1	19715867	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn8c1.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn8c1.err	proj1_java/montecarlo_benchmark.slurm
+j_mcn4c2	19715868	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn4c2.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn4c2.err	proj1_java/montecarlo_benchmark.slurm
+j_mcn2c4	19715869	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn2c4.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn2c4.err	proj1_java/montecarlo_benchmark.slurm
+j_mcn1c8	19715870	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn1c8.out	/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn1c8.err	proj1_java/montecarlo_benchmark.slurm
+
+Per-job status from sacct:
+
+--- c_grn8c1 (19715847) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715847|c_grn8c1|COMPLETED|0:0|00:06:14
+19715847.batch|batch|COMPLETED|0:0|00:06:14
+19715847.0|bfs|COMPLETED|0:0|00:00:09
+19715847.1|bfs|COMPLETED|0:0|00:00:42
+19715847.2|bfs|COMPLETED|0:0|00:01:24
+19715847.3|bfs|COMPLETED|0:0|00:03:58
+
+--- c_grn4c2 (19715848) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715848|c_grn4c2|COMPLETED|0:0|00:05:14
+19715848.batch|batch|COMPLETED|0:0|00:05:14
+19715848.0|bfs|COMPLETED|0:0|00:00:08
+19715848.1|bfs|COMPLETED|0:0|00:00:40
+19715848.2|bfs|COMPLETED|0:0|00:01:20
+19715848.3|bfs|COMPLETED|0:0|00:03:05
+
+--- c_grn2c4 (19715849) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715849|c_grn2c4|COMPLETED|0:0|00:05:05
+19715849.batch|batch|COMPLETED|0:0|00:05:05
+19715849.0|bfs|COMPLETED|0:0|00:00:09
+19715849.1|bfs|COMPLETED|0:0|00:00:40
+19715849.2|bfs|COMPLETED|0:0|00:01:16
+19715849.3|bfs|COMPLETED|0:0|00:02:59
+
+--- c_grn1c8 (19715850) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715850|c_grn1c8|COMPLETED|0:0|00:05:06
+19715850.batch|batch|COMPLETED|0:0|00:05:06
+19715850.0|bfs|COMPLETED|0:0|00:00:09
+19715850.1|bfs|COMPLETED|0:0|00:00:37
+19715850.2|bfs|COMPLETED|0:0|00:01:12
+19715850.3|bfs|COMPLETED|0:0|00:03:07
+
+--- c_mnn8c1 (19715851) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715851|c_mnn8c1|COMPLETED|0:0|00:05:06
+19715851.batch|batch|COMPLETED|0:0|00:05:06
+19715851.0|montecarlo|COMPLETED|0:0|00:00:03
+19715851.1|montecarlo|COMPLETED|0:0|00:00:07
+19715851.2|montecarlo|COMPLETED|0:0|00:00:11
+19715851.3|montecarlo|COMPLETED|0:0|00:00:15
+19715851.4|montecarlo|COMPLETED|0:0|00:00:19
+19715851.5|montecarlo|COMPLETED|0:0|00:00:23
+19715851.6|montecarlo|COMPLETED|0:0|00:00:28
+19715851.7|montecarlo|COMPLETED|0:0|00:00:31
+19715851.8|montecarlo|COMPLETED|0:0|00:00:35
+19715851.9|montecarlo|COMPLETED|0:0|00:00:39
+19715851.10|montecarlo|COMPLETED|0:0|00:00:44
+19715851.11|montecarlo|COMPLETED|0:0|00:00:49
+
+--- c_mnn4c2 (19715852) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715852|c_mnn4c2|COMPLETED|0:0|00:05:06
+19715852.batch|batch|COMPLETED|0:0|00:05:06
+19715852.0|montecarlo|COMPLETED|0:0|00:00:03
+19715852.1|montecarlo|COMPLETED|0:0|00:00:07
+19715852.2|montecarlo|COMPLETED|0:0|00:00:11
+19715852.3|montecarlo|COMPLETED|0:0|00:00:15
+19715852.4|montecarlo|COMPLETED|0:0|00:00:19
+19715852.5|montecarlo|COMPLETED|0:0|00:00:23
+19715852.6|montecarlo|COMPLETED|0:0|00:00:27
+19715852.7|montecarlo|COMPLETED|0:0|00:00:31
+19715852.8|montecarlo|COMPLETED|0:0|00:00:35
+19715852.9|montecarlo|COMPLETED|0:0|00:00:39
+19715852.10|montecarlo|COMPLETED|0:0|00:00:43
+19715852.11|montecarlo|COMPLETED|0:0|00:00:50
+
+--- c_mnn2c4 (19715853) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715853|c_mnn2c4|COMPLETED|0:0|00:05:06
+19715853.batch|batch|COMPLETED|0:0|00:05:06
+19715853.0|montecarlo|COMPLETED|0:0|00:00:03
+19715853.1|montecarlo|COMPLETED|0:0|00:00:07
+19715853.2|montecarlo|COMPLETED|0:0|00:00:11
+19715853.3|montecarlo|COMPLETED|0:0|00:00:15
+19715853.4|montecarlo|COMPLETED|0:0|00:00:20
+19715853.5|montecarlo|COMPLETED|0:0|00:00:23
+19715853.6|montecarlo|COMPLETED|0:0|00:00:27
+19715853.7|montecarlo|COMPLETED|0:0|00:00:31
+19715853.8|montecarlo|COMPLETED|0:0|00:00:35
+19715853.9|montecarlo|COMPLETED|0:0|00:00:40
+19715853.10|montecarlo|COMPLETED|0:0|00:00:43
+19715853.11|montecarlo|COMPLETED|0:0|00:00:50
+
+--- c_mnn1c8 (19715854) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715854|c_mnn1c8|COMPLETED|0:0|00:05:05
+19715854.batch|batch|COMPLETED|0:0|00:05:05
+19715854.0|montecarlo|COMPLETED|0:0|00:00:03
+19715854.1|montecarlo|COMPLETED|0:0|00:00:07
+19715854.2|montecarlo|COMPLETED|0:0|00:00:11
+19715854.3|montecarlo|COMPLETED|0:0|00:00:15
+19715854.4|montecarlo|COMPLETED|0:0|00:00:19
+19715854.5|montecarlo|COMPLETED|0:0|00:00:24
+19715854.6|montecarlo|COMPLETED|0:0|00:00:27
+19715854.7|montecarlo|COMPLETED|0:0|00:00:31
+19715854.8|montecarlo|COMPLETED|0:0|00:00:35
+19715854.9|montecarlo|COMPLETED|0:0|00:00:39
+19715854.10|montecarlo|COMPLETED|0:0|00:00:44
+19715854.11|montecarlo|COMPLETED|0:0|00:00:49
+
+--- c_nbn8c1 (19715855) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715855|c_nbn8c1|COMPLETED|0:0|00:05:38
+19715855.batch|batch|COMPLETED|0:0|00:05:38
+19715855.0|nbody|COMPLETED|0:0|00:00:03
+19715855.1|nbody|CANCELLED by 116895|0:9|00:00:02
+19715855.2|nbody|COMPLETED|0:0|00:00:10
+19715855.3|nbody|CANCELLED by 116895|0:9|00:00:02
+19715855.4|nbody|COMPLETED|0:0|00:00:22
+19715855.5|nbody|CANCELLED by 0|0:9|00:00:02
+19715855.6|nbody|COMPLETED|0:0|00:00:43
+19715855.7|nbody|CANCELLED by 116895|0:9|00:00:02
+19715855.8|nbody|COMPLETED|0:0|00:01:02
+19715855.9|nbody|CANCELLED by 116895|0:9|00:00:02
+19715855.10|nbody|COMPLETED|0:0|00:01:29
+19715855.11|nbody|COMPLETED|0:0|00:01:38
+
+--- c_nbn4c2 (19715856) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715856|c_nbn4c2|COMPLETED|0:0|00:08:41
+19715856.batch|batch|COMPLETED|0:0|00:08:41
+19715856.0|nbody|COMPLETED|0:0|00:00:04
+19715856.1|nbody|COMPLETED|0:0|00:00:07
+19715856.2|nbody|COMPLETED|0:0|00:00:11
+19715856.3|nbody|COMPLETED|0:0|00:00:17
+19715856.4|nbody|COMPLETED|0:0|00:00:24
+19715856.5|nbody|COMPLETED|0:0|00:00:34
+19715856.6|nbody|COMPLETED|0:0|00:00:43
+19715856.7|nbody|COMPLETED|0:0|00:00:53
+19715856.8|nbody|COMPLETED|0:0|00:01:04
+19715856.9|nbody|COMPLETED|0:0|00:01:15
+19715856.10|nbody|COMPLETED|0:0|00:01:29
+19715856.11|nbody|COMPLETED|0:0|00:01:39
+
+--- c_nbn2c4 (19715857) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715857|c_nbn2c4|COMPLETED|0:0|00:08:26
+19715857.batch|batch|COMPLETED|0:0|00:08:26
+19715857.0|nbody|COMPLETED|0:0|00:00:03
+19715857.1|nbody|COMPLETED|0:0|00:00:06
+19715857.2|nbody|COMPLETED|0:0|00:00:10
+19715857.3|nbody|COMPLETED|0:0|00:00:15
+19715857.4|nbody|COMPLETED|0:0|00:00:23
+19715857.5|nbody|COMPLETED|0:0|00:00:33
+19715857.6|nbody|COMPLETED|0:0|00:00:42
+19715857.7|nbody|COMPLETED|0:0|00:00:51
+19715857.8|nbody|COMPLETED|0:0|00:01:03
+19715857.9|nbody|COMPLETED|0:0|00:01:13
+19715857.10|nbody|COMPLETED|0:0|00:01:28
+19715857.11|nbody|COMPLETED|0:0|00:01:38
+
+--- c_nbn1c8 (19715858) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715858|c_nbn1c8|COMPLETED|0:0|00:08:24
+19715858.batch|batch|COMPLETED|0:0|00:08:24
+19715858.0|nbody|COMPLETED|0:0|00:00:03
+19715858.1|nbody|COMPLETED|0:0|00:00:06
+19715858.2|nbody|COMPLETED|0:0|00:00:10
+19715858.3|nbody|COMPLETED|0:0|00:00:15
+19715858.4|nbody|COMPLETED|0:0|00:00:23
+19715858.5|nbody|COMPLETED|0:0|00:00:33
+19715858.6|nbody|COMPLETED|0:0|00:00:42
+19715858.7|nbody|COMPLETED|0:0|00:00:52
+19715858.8|nbody|COMPLETED|0:0|00:01:02
+19715858.9|nbody|COMPLETED|0:0|00:01:14
+19715858.10|nbody|COMPLETED|0:0|00:01:27
+19715858.11|nbody|COMPLETED|0:0|00:01:36
+
+--- j_grn8c1 (19715859) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715859|j_grn8c1|TIMEOUT|0:0|01:00:18
+19715859.batch|batch|CANCELLED|0:15|01:00:19
+19715859.0|java|FAILED|15:0|01:00:23
+
+--- j_grn4c2 (19715860) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715860|j_grn4c2|COMPLETED|0:0|00:10:56
+19715860.batch|batch|COMPLETED|0:0|00:10:56
+19715860.0|java|COMPLETED|0:0|00:00:21
+19715860.1|java|COMPLETED|0:0|00:01:23
+19715860.2|java|COMPLETED|0:0|00:03:20
+19715860.3|java|COMPLETED|0:0|00:05:51
+
+--- j_grn2c4 (19715861) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715861|j_grn2c4|COMPLETED|0:0|00:43:25
+19715861.batch|batch|COMPLETED|0:0|00:43:25
+19715861.0|java|COMPLETED|0:0|00:00:18
+19715861.1|java|COMPLETED|0:0|00:01:25
+19715861.2|java|COMPLETED|0:0|00:06:08
+19715861.3|java|COMPLETED|0:0|00:35:33
+
+--- j_grn1c8 (19715862) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715862|j_grn1c8|COMPLETED|0:0|00:45:56
+19715862.batch|batch|COMPLETED|0:0|00:45:56
+19715862.0|java|COMPLETED|0:0|00:00:16
+19715862.1|java|COMPLETED|0:0|00:01:23
+19715862.2|java|COMPLETED|0:0|00:02:57
+19715862.3|java|COMPLETED|0:0|00:41:18
+
+--- j_nbn8c1 (19715863) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715863|j_nbn8c1|TIMEOUT|0:0|01:00:18
+19715863.batch|batch|CANCELLED|0:15|01:00:19
+19715863.0|java|FAILED|15:0|01:00:23
+
+--- j_nbn4c2 (19715864) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715864|j_nbn4c2|TIMEOUT|0:0|01:00:18
+19715864.batch|batch|CANCELLED|0:15|01:00:19
+19715864.0|java|COMPLETED|0:0|00:00:04
+19715864.1|java|FAILED|15:0|01:00:15
+
+--- j_nbn2c4 (19715865) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715865|j_nbn2c4|COMPLETED|0:0|00:04:57
+19715865.batch|batch|COMPLETED|0:0|00:04:57
+19715865.0|java|COMPLETED|0:0|00:00:03
+19715865.1|java|COMPLETED|0:0|00:00:05
+19715865.2|java|COMPLETED|0:0|00:00:07
+19715865.3|java|COMPLETED|0:0|00:00:11
+19715865.4|java|COMPLETED|0:0|00:00:15
+19715865.5|java|COMPLETED|0:0|00:00:20
+19715865.6|java|COMPLETED|0:0|00:00:25
+19715865.7|java|COMPLETED|0:0|00:00:30
+19715865.8|java|COMPLETED|0:0|00:00:36
+19715865.9|java|COMPLETED|0:0|00:00:42
+19715865.10|java|COMPLETED|0:0|00:00:49
+19715865.11|java|COMPLETED|0:0|00:00:53
+
+--- j_nbn1c8 (19715866) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715866|j_nbn1c8|COMPLETED|0:0|00:04:35
+19715866.batch|batch|COMPLETED|0:0|00:04:35
+19715866.0|java|COMPLETED|0:0|00:00:02
+19715866.1|java|COMPLETED|0:0|00:00:04
+19715866.2|java|COMPLETED|0:0|00:00:05
+19715866.3|java|COMPLETED|0:0|00:00:09
+19715866.4|java|COMPLETED|0:0|00:00:13
+19715866.5|java|COMPLETED|0:0|00:00:18
+19715866.6|java|COMPLETED|0:0|00:00:22
+19715866.7|java|COMPLETED|0:0|00:00:28
+19715866.8|java|COMPLETED|0:0|00:00:34
+19715866.9|java|COMPLETED|0:0|00:00:39
+19715866.10|java|COMPLETED|0:0|00:00:49
+19715866.11|java|COMPLETED|0:0|00:00:51
+
+--- j_mcn8c1 (19715867) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715867|j_mcn8c1|COMPLETED|0:0|00:15:18
+19715867.batch|batch|COMPLETED|0:0|00:15:18
+19715867.0|java|COMPLETED|0:0|00:00:07
+19715867.1|java|COMPLETED|0:0|00:00:19
+19715867.2|java|COMPLETED|0:0|00:00:32
+19715867.3|java|COMPLETED|0:0|00:00:44
+19715867.4|java|COMPLETED|0:0|00:00:57
+19715867.5|java|COMPLETED|0:0|00:01:09
+19715867.6|java|COMPLETED|0:0|00:01:22
+19715867.7|java|COMPLETED|0:0|00:01:35
+19715867.8|java|COMPLETED|0:0|00:01:47
+19715867.9|java|COMPLETED|0:0|00:02:00
+19715867.10|java|COMPLETED|0:0|00:02:12
+19715867.11|java|COMPLETED|0:0|00:02:33
+
+--- j_mcn4c2 (19715868) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715868|j_mcn4c2|COMPLETED|0:0|00:15:10
+19715868.batch|batch|COMPLETED|0:0|00:15:10
+19715868.0|java|COMPLETED|0:0|00:00:06
+19715868.1|java|COMPLETED|0:0|00:00:18
+19715868.2|java|COMPLETED|0:0|00:00:32
+19715868.3|java|COMPLETED|0:0|00:00:43
+19715868.4|java|COMPLETED|0:0|00:00:57
+19715868.5|java|COMPLETED|0:0|00:01:08
+19715868.6|java|COMPLETED|0:0|00:01:22
+19715868.7|java|COMPLETED|0:0|00:01:34
+19715868.8|java|COMPLETED|0:0|00:01:46
+19715868.9|java|COMPLETED|0:0|00:01:59
+19715868.10|java|COMPLETED|0:0|00:02:12
+19715868.11|java|COMPLETED|0:0|00:02:32
+
+--- j_mcn2c4 (19715869) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715869|j_mcn2c4|COMPLETED|0:0|00:15:07
+19715869.batch|batch|COMPLETED|0:0|00:15:07
+19715869.0|java|COMPLETED|0:0|00:00:06
+19715869.1|java|COMPLETED|0:0|00:00:18
+19715869.2|java|COMPLETED|0:0|00:00:31
+19715869.3|java|COMPLETED|0:0|00:00:44
+19715869.4|java|COMPLETED|0:0|00:00:56
+19715869.5|java|COMPLETED|0:0|00:01:08
+19715869.6|java|COMPLETED|0:0|00:01:22
+19715869.7|java|COMPLETED|0:0|00:01:33
+19715869.8|java|COMPLETED|0:0|00:01:47
+19715869.9|java|COMPLETED|0:0|00:01:59
+19715869.10|java|COMPLETED|0:0|00:02:11
+19715869.11|java|COMPLETED|0:0|00:02:31
+
+--- j_mcn1c8 (19715870) ---
+JobID|JobName|State|ExitCode|Elapsed
+19715870|j_mcn1c8|COMPLETED|0:0|00:15:13
+19715870.batch|batch|COMPLETED|0:0|00:15:13
+19715870.0|java|COMPLETED|0:0|00:00:05
+19715870.1|java|COMPLETED|0:0|00:00:18
+19715870.2|java|COMPLETED|0:0|00:00:30
+19715870.3|java|COMPLETED|0:0|00:00:43
+19715870.4|java|COMPLETED|0:0|00:00:56
+19715870.5|java|COMPLETED|0:0|00:01:09
+19715870.6|java|COMPLETED|0:0|00:01:20
+19715870.7|java|COMPLETED|0:0|00:01:44
+19715870.8|java|COMPLETED|0:0|00:01:46
+19715870.9|java|COMPLETED|0:0|00:01:59
+19715870.10|java|COMPLETED|0:0|00:02:11
+19715870.11|java|COMPLETED|0:0|00:02:30
+
+==== audit finished ====

@@ -1,0 +1,264 @@
+==== main_run.sh started ====
+Timestamp: 2026-03-30_15-07-58-423
+SCRIPT_DIR: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_slurm
+ROOT_DIR: /net/afscra/people/plgpawelprus/parallel-programming-methods
+RUN_DIR: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423
+MAIN_OUT_FILE: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/main_output.txt
+AUDIT_SCRIPT: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_slurm/audit.sh
+
+Submitting benchmark job: c_grn8c1
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph/bfs_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn8c1.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn8c1.err
+  nodes          : 8
+  cpus-per-task  : 1
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715847
+
+Submitting benchmark job: c_grn4c2
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph/bfs_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn4c2.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn4c2.err
+  nodes          : 4
+  cpus-per-task  : 2
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715848
+
+Submitting benchmark job: c_grn2c4
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph/bfs_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn2c4.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn2c4.err
+  nodes          : 2
+  cpus-per-task  : 4
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715849
+
+Submitting benchmark job: c_grn1c8
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/graph/bfs_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn1c8.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_grn1c8.err
+  nodes          : 1
+  cpus-per-task  : 8
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715850
+
+Submitting benchmark job: c_mnn8c1
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo/mc_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn8c1.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn8c1.err
+  nodes          : 8
+  cpus-per-task  : 1
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715851
+
+Submitting benchmark job: c_mnn4c2
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo/mc_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn4c2.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn4c2.err
+  nodes          : 4
+  cpus-per-task  : 2
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715852
+
+Submitting benchmark job: c_mnn2c4
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo/mc_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn2c4.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn2c4.err
+  nodes          : 2
+  cpus-per-task  : 4
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715853
+
+Submitting benchmark job: c_mnn1c8
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/montecarlo/mc_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn1c8.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_mnn1c8.err
+  nodes          : 1
+  cpus-per-task  : 8
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715854
+
+Submitting benchmark job: c_nbn8c1
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody/nbody_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn8c1.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn8c1.err
+  nodes          : 8
+  cpus-per-task  : 1
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715855
+
+Submitting benchmark job: c_nbn4c2
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody/nbody_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn4c2.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn4c2.err
+  nodes          : 4
+  cpus-per-task  : 2
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715856
+
+Submitting benchmark job: c_nbn2c4
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody/nbody_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn2c4.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn2c4.err
+  nodes          : 2
+  cpus-per-task  : 4
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715857
+
+Submitting benchmark job: c_nbn1c8
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1/nbody/nbody_main.sh
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn1c8.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/c_nbn1c8.err
+  nodes          : 1
+  cpus-per-task  : 8
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715858
+
+Submitting benchmark job: j_grn8c1
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/graph_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn8c1.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn8c1.err
+  nodes          : 8
+  cpus-per-task  : 1
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715859
+
+Submitting benchmark job: j_grn4c2
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/graph_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn4c2.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn4c2.err
+  nodes          : 4
+  cpus-per-task  : 2
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715860
+
+Submitting benchmark job: j_grn2c4
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/graph_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn2c4.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn2c4.err
+  nodes          : 2
+  cpus-per-task  : 4
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715861
+
+Submitting benchmark job: j_grn1c8
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/graph_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn1c8.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_grn1c8.err
+  nodes          : 1
+  cpus-per-task  : 8
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs
+  submitted as job_id=19715862
+
+Submitting benchmark job: j_nbn8c1
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/moldyn_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn8c1.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn8c1.err
+  nodes          : 8
+  cpus-per-task  : 1
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715863
+
+Submitting benchmark job: j_nbn4c2
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/moldyn_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn4c2.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn4c2.err
+  nodes          : 4
+  cpus-per-task  : 2
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715864
+
+Submitting benchmark job: j_nbn2c4
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/moldyn_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn2c4.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn2c4.err
+  nodes          : 2
+  cpus-per-task  : 4
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715865
+
+Submitting benchmark job: j_nbn1c8
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/moldyn_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn1c8.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_nbn1c8.err
+  nodes          : 1
+  cpus-per-task  : 8
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/nbody.txt
+  submitted as job_id=19715866
+
+Submitting benchmark job: j_mcn8c1
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/montecarlo_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn8c1.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn8c1.err
+  nodes          : 8
+  cpus-per-task  : 1
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715867
+
+Submitting benchmark job: j_mcn4c2
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/montecarlo_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn4c2.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn4c2.err
+  nodes          : 4
+  cpus-per-task  : 2
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715868
+
+Submitting benchmark job: j_mcn2c4
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/montecarlo_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn2c4.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn2c4.err
+  nodes          : 2
+  cpus-per-task  : 4
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715869
+
+Submitting benchmark job: j_mcn1c8
+  workdir        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/
+  script         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/montecarlo_benchmark.slurm
+  stdout         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn1c8.out
+  stderr         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs/j_mcn1c8.err
+  nodes          : 1
+  cpus-per-task  : 8
+  args           : /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/montecarlo.txt
+  submitted as job_id=19715870
+
+All benchmark jobs submitted.
+Submitted job IDs: 19715847 19715848 19715849 19715850 19715851 19715852 19715853 19715854 19715855 19715856 19715857 19715858 19715859 19715860 19715861 19715862 19715863 19715864 19715865 19715866 19715867 19715868 19715869 19715870
+
+Submitting audit job with dependency afterany:19715847:19715848:19715849:19715850:19715851:19715852:19715853:19715854:19715855:19715856:19715857:19715858:19715859:19715860:19715861:19715862:19715863:19715864:19715865:19715866:19715867:19715868:19715869:19715870
+  audit script: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_slurm/audit.sh
+  stdout      : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/audit/out.txt
+  stderr      : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/audit/err.txt
+Audit job submitted as job_id=19715871
+
+==== submission summary ====
+Run dir         : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423
+Manifest        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/manifest.tsv
+Jobs TSV        : /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs.tsv
+Benchmark count : 24
+Audit job id    : 19715871
+==== main_run.sh finished ====

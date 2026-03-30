@@ -1,0 +1,61 @@
+ java/11.0.2 loaded.
+Mar 30, 2026 3:08:02 PM org.pcj.internal.InternalPCJ start
+INFO: PCJ version 5.3.3-831a4fa (2023-10-10T14:35:07.064+0200)
+Mar 30, 2026 3:08:03 PM org.pcj.internal.InternalPCJ start
+INFO: Starting MolDyn with 8 threads (on 8 nodes)...
+Mar 30, 2026 3:09:43 PM org.pcj.internal.message.alive.AliveState checkAliveNotifyTimeout
+SEVERE: No AliveMessage from 3 to 1 in last 79 seconds.
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:09:43 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:09:51 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+Mar 30, 2026 3:09:51 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+Mar 30, 2026 3:09:51 PM org.pcj.internal.InternalPCJ start
+INFO: Aborted MolDyn with 8 threads (on 8 nodes) after 0h 1m 48s 129ms.
+Mar 30, 2026 3:09:51 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+Mar 30, 2026 3:09:51 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+Mar 30, 2026 3:09:51 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+Mar 30, 2026 3:09:51 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+Mar 30, 2026 3:10:03 PM org.pcj.internal.message.alive.AliveState sendToNeighbours
+SEVERE: Unable to send AliveMessage from node-#3 to node-#1
+Mar 30, 2026 3:10:03 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:10:03 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:10:03 PM org.pcj.internal.InternalPCJ start
+SEVERE: PCJ main thread interrupted. Interrupting all PCJ threads
+Mar 30, 2026 3:10:03 PM org.pcj.internal.InternalPCJ start
+INFO: Waiting up to 8 seconds before forcibly stop PCJ threads.
+Mar 30, 2026 3:10:11 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+Mar 30, 2026 3:10:11 PM org.pcj.internal.InternalPCJ start
+INFO: Forcibly stopping PCJ threads.
+slurmstepd: error: *** JOB 19715863 ON ac0209 CANCELLED AT 2026-03-30T16:08:19 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.

@@ -1,0 +1,17 @@
+ gcccore/13.2.0 loaded.
+ zlib/1.2.13-gcccore-13.2.0 loaded.
+ binutils/2.40-gcccore-13.2.0 loaded.
+ gcc/13.2.0 loaded.
+ numactl/2.0.16-gcccore-13.2.0 loaded.
+ xz/5.4.4-gcccore-13.2.0 loaded.
+ libxml2/2.11.5-gcccore-13.2.0 loaded.
+ libpciaccess/0.17-gcccore-13.2.0 loaded.
+ hwloc/2.9.2-gcccore-13.2.0 loaded.
+ openssl/1.1 loaded.
+ libevent/2.1.12-gcccore-13.2.0 loaded.
+ ucx/1.15.0-gcccore-13.2.0 loaded.
+ libfabric/1.19.0-gcccore-13.2.0 loaded.
+ pmix/5.0.2-gcccore-13.2.0 loaded.
+ ucc/1.2.0-gcccore-13.2.0 loaded.
+ prrte/3.0.5-gcc-13.2.0 loaded.
+ openmpi/5.0.2-gcc-13.2.0 loaded.

@@ -1,0 +1,100 @@
+Nodes: 4
+MPI tasks: 4
+OMP threads: 2
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     1000000000 
+
+Estimated Pi = 3.141659616000
+Total points = 1000000000
+Elapsed time = 1.629364 s
+Throughput = 613.74 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     3500000000 
+
+Estimated Pi = 3.141601700571
+Total points = 3500000000
+Elapsed time = 5.617076 s
+Throughput = 623.10 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     6000000000 
+
+Estimated Pi = 3.141589005333
+Total points = 6000000000
+Elapsed time = 9.641158 s
+Throughput = 622.33 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     8500000000 
+
+Estimated Pi = 3.141591616000
+Total points = 8500000000
+Elapsed time = 13.826324 s
+Throughput = 614.77 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     11000000000 
+
+Estimated Pi = 3.141582974545
+Total points = 11000000000
+Elapsed time = 17.660533 s
+Throughput = 622.86 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     13500000000 
+
+Estimated Pi = 3.141592534519
+Total points = 13500000000
+Elapsed time = 21.655372 s
+Throughput = 623.40 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     16000000000 
+
+Estimated Pi = 3.141586243000
+Total points = 16000000000
+Elapsed time = 25.662298 s
+Throughput = 623.48 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     18500000000 
+
+Estimated Pi = 3.141589222919
+Total points = 18500000000
+Elapsed time = 29.618349 s
+Throughput = 624.61 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     21000000000 
+
+Estimated Pi = 3.141585583238
+Total points = 21000000000
+Elapsed time = 33.733075 s
+Throughput = 622.53 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     23500000000 
+
+Estimated Pi = 3.141584152511
+Total points = 23500000000
+Elapsed time = 37.676712 s
+Throughput = 623.73 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     26000000000 
+
+Estimated Pi = 3.141586510154
+Total points = 26000000000
+Elapsed time = 41.654300 s
+Throughput = 624.19 million points/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./montecarlo     30000000000 
+
+Estimated Pi = 3.141586441067
+Total points = 30000000000
+Elapsed time = 48.231998 s
+Throughput = 621.99 million points/s
+MonteCarlo benchmark completed.
