@@ -20,10 +20,7 @@ JOBS_TSV="${RUN_DIR}/jobs.tsv"
 #   AUDIT_SCRIPT=path/to/audit.sh ./main_run.sh
 AUDIT_SCRIPT="${1:-${AUDIT_SCRIPT:-${SCRIPT_DIR}/audit.sh}}"
 
-mkdir -p "$RUN_DIR"
-mkdir -p "$RUN_DIR/jobs"
-mkdir -p "$RUN_DIR/audit"
-mkdir -p "$RUN_DIR/meta"
+mkdir -p "$RUN_DIR/jobs" "$RUN_DIR/audit" "$RUN_DIR/meta"
 
 exec >"$MAIN_OUT_FILE" 2>&1
 
@@ -42,64 +39,85 @@ if ! command -v sbatch >/dev/null 2>&1; then
 fi
 
 # Format:
-#   job_name|workdir_rel|script_rel|args
+#   short_name|workdir_rel|script_rel|args
+#
+# short_name must be exactly 4 characters.
+# Final job name is:
+#   <short_name><config_suffix>
+# so total length must be exactly 8 characters.
 declare -a JOB_DEFINITIONS=(
-    "graph_omp|proj1/graph|proj1/graph/bfs_omp.sh"
-    "graph_mpi|proj1/graph|proj1/graph/bfs_mpi.sh"
-    "graph_hybrid|proj1/graph|proj1/graph/bfs_hybrid.sh"
-    "graph_hybrid2|proj1/graph|proj1/graph/bfs_hybrid2.sh"
+    # "c_gr|proj1/graph|proj1/graph/bfs_main.sh|${ROOT_DIR}/run_configs/graphs"
+    # "c_mn|proj1/montecarlo|proj1/montecarlo/mc_main.sh|${ROOT_DIR}/run_configs/montecarlo.txt"
+    # "c_nb|proj1/nbody|proj1/nbody/nbody_main.sh|${ROOT_DIR}/run_configs/nbody.txt"
 
-    "montecarlo_omp|proj1/montecarlo|proj1/montecarlo/mc_omp.sh"
-    "montecarlo_mpi|proj1/montecarlo|proj1/montecarlo/mc_mpi.sh"
-    "montecarlo_hybrid|proj1/montecarlo|proj1/montecarlo/mc_hybrid.sh"
-    "montecarlo_hybrid2|proj1/montecarlo|proj1/montecarlo/mc_hybrid2.sh"
-
-    "nbody_omp|proj1/nbody|proj1/nbody/nbody_omp.sh"
-    "nbody_mpi|proj1/nbody|proj1/nbody/nbody_mpi.sh"
-    "nbody_hybrid|proj1/nbody|proj1/nbody/nbody_hybrid.sh"
-    "nbody_hybrid2|proj1/nbody|proj1/nbody/nbody_hybrid2.sh"
-
-    "java_1_benchmark_easy|proj1_java|proj1_java/benchmark_easy.slurm|1"
-    "java_2_benchmark_easy|proj1_java|proj1_java/benchmark_easy.slurm|2"
-    "java_3_benchmark_easy|proj1_java|proj1_java/benchmark_easy.slurm|3"
-    "java_4_benchmark_easy|proj1_java|proj1_java/benchmark_easy.slurm|4"
-    "java_5_benchmark_easy|proj1_java|proj1_java/benchmark_easy.slurm|5"
-    "java_6_benchmark_easy|proj1_java|proj1_java/benchmark_easy.slurm|6"
-    "java_7_benchmark_easy|proj1_java|proj1_java/benchmark_easy.slurm|7"
+    "j_gr|proj1_java/|proj1_java/graph_benchmark.slurm|${ROOT_DIR}/run_configs/graphs"
+    "j_nb|proj1_java/|proj1_java/moldyn_benchmark.slurm|${ROOT_DIR}/run_configs/nbody.txt"
+    # "j_mc|proj1_java/|proj1_java/montecarlo_benchmark.slurm|${ROOT_DIR}/run_configs/montecarlo.txt"
 )
 
-{
-    printf "job_name\tworkdir_rel\tscript_rel\tstdout\tstderr\n"
-} >"$MANIFEST_TSV"
+# Format:
+#   nodes|cpus_per_task|suffix
+#
+# suffix must be exactly 4 characters.
+declare -a CONFIGURATIONS=(
+    "8|1|n8c1"
+    "4|2|n4c2"
+    # "2|4|n2c4"
+    # "1|8|n1c8"
+)
 
-{
-    printf "job_name\tjob_id\tstdout\tstderr\tscript_rel\n"
-} >"$JOBS_TSV"
+printf "job_name\tworkdir_rel\tscript_rel\tstdout\tstderr\n" >"$MANIFEST_TSV"
+printf "job_name\tjob_id\tstdout\tstderr\tscript_rel\n" >"$JOBS_TSV"
 
 declare -a SUBMITTED_JOB_IDS=()
+
+require_exact_length() {
+    local label="$1"
+    local value="$2"
+    local expected_length="$3"
+
+    if [[ "${#value}" -ne "$expected_length" ]]; then
+        echo "ERROR: ${label} must be exactly ${expected_length} characters, got '${value}' (${#value})"
+        exit 1
+    fi
+}
+
+require_existing_dir() {
+    local path="$1"
+    local description="$2"
+
+    if [[ ! -d "$path" ]]; then
+        echo "ERROR: missing ${description}: ${path}"
+        exit 1
+    fi
+}
+
+require_existing_file() {
+    local path="$1"
+    local description="$2"
+
+    if [[ ! -f "$path" ]]; then
+        echo "ERROR: missing ${description}: ${path}"
+        exit 1
+    fi
+}
 
 submit_benchmark_job() {
     local job_name="$1"
     local workdir_rel="$2"
     local script_rel="$3"
+    local args="$4"
+    local nodes="$5"
+    local cpus_per_task="$6"
 
     local workdir_abs="${ROOT_DIR}/${workdir_rel}"
     local script_abs="${ROOT_DIR}/${script_rel}"
-    local job_dir="${RUN_DIR}/jobs/${job_name}"
-    local stdout_file="${job_dir}/out.txt"
-    local stderr_file="${job_dir}/out.txt"
+    local stdout_file="${RUN_DIR}/jobs/${job_name}.out"
+    local stderr_file="${RUN_DIR}/jobs/${job_name}.out"
 
-    mkdir -p "$job_dir"
-
-    if [[ ! -d "$workdir_abs" ]]; then
-        echo "ERROR: missing workdir for ${job_name}: ${workdir_abs}"
-        exit 1
-    fi
-
-    if [[ ! -f "$script_abs" ]]; then
-        echo "ERROR: missing script for ${job_name}: ${script_abs}"
-        exit 1
-    fi
+    require_exact_length "job_name" "$job_name" 8
+    require_existing_dir "$workdir_abs" "workdir for ${job_name}"
+    require_existing_file "$script_abs" "script for ${job_name}"
 
     printf "%s\t%s\t%s\t%s\t%s\n" \
         "$job_name" \
@@ -109,21 +127,33 @@ submit_benchmark_job() {
         "$stderr_file" >>"$MANIFEST_TSV"
 
     echo "Submitting benchmark job: ${job_name}"
-    echo "  workdir: ${workdir_abs}"
-    echo "  script : ${script_abs}"
-    echo "  stdout : ${stdout_file}"
-    echo "  stderr : ${stderr_file}"
+    echo "  workdir        : ${workdir_abs}"
+    echo "  script         : ${script_abs}"
+    echo "  stdout         : ${stdout_file}"
+    echo "  stderr         : ${stderr_file}"
+    echo "  nodes          : ${nodes}"
+    echo "  cpus-per-task  : ${cpus_per_task}"
+    echo "  args           : ${args:-<none>}"
+
+    local -a sbatch_cmd=(
+        sbatch
+        --parsable
+        --exclusive
+        --nodes="$nodes"
+        --cpus-per-task="$cpus_per_task"
+        --chdir="$workdir_abs"
+        --job-name="$job_name"
+        --output="$stdout_file"
+        --error="$stderr_file"
+        "$script_abs"
+    )
+
+    if [[ -n "$args" ]]; then
+        sbatch_cmd+=("$args")
+    fi
 
     local job_id
-    job_id="$(
-        sbatch \
-            --parsable \
-            --chdir="$workdir_abs" \
-            --job-name="$job_name" \
-            --output="$stdout_file" \
-            --error="$stderr_file" \
-            "$script_abs" "$args"
-    )"
+    job_id="$("${sbatch_cmd[@]}")"
 
     SUBMITTED_JOB_IDS+=("$job_id")
 
@@ -139,8 +169,23 @@ submit_benchmark_job() {
 }
 
 for definition in "${JOB_DEFINITIONS[@]}"; do
-    IFS='|' read -r job_name workdir_rel script_rel args <<<"$definition"
-    submit_benchmark_job "$job_name" "$workdir_rel" "$script_rel"
+    IFS='|' read -r short_name workdir_rel script_rel args <<<"$definition"
+
+    require_exact_length "short_name" "$short_name" 4
+
+    for configuration in "${CONFIGURATIONS[@]}"; do
+        IFS='|' read -r nodes cpus_per_task config_suffix <<<"$configuration"
+
+        require_exact_length "config suffix" "$config_suffix" 4
+
+        submit_benchmark_job \
+            "${short_name}${config_suffix}" \
+            "$workdir_rel" \
+            "$script_rel" \
+            "$args" \
+            "$nodes" \
+            "$cpus_per_task"
+    done
 done
 
 echo "All benchmark jobs submitted."
@@ -161,7 +206,7 @@ if [[ -f "$AUDIT_SCRIPT" ]]; then
     fi
 
     AUDIT_STDOUT="${RUN_DIR}/audit/out.txt"
-    AUDIT_STDERR="${RUN_DIR}/audit/out.txt"
+    AUDIT_STDERR="${RUN_DIR}/audit/err.txt"
 
     echo "Submitting audit job with dependency afterany:${DEPENDENCY_LIST}"
     echo "  audit script: ${AUDIT_SCRIPT}"
@@ -171,7 +216,7 @@ if [[ -f "$AUDIT_SCRIPT" ]]; then
     AUDIT_JOB_ID="$(
         sbatch \
             --parsable \
-            --job-name="proj1_audit" \
+            --job-name="audit001" \
             --dependency="afterany:${DEPENDENCY_LIST}" \
             --output="$AUDIT_STDOUT" \
             --error="$AUDIT_STDERR" \
