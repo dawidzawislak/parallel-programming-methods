@@ -1,0 +1,8 @@
+Using temporary directory: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.98     -cp     pcj.jar:.     Graph500FromFile     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715859.txt     /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph1.txt     0 
+Loading graph: /net/afscra/people/plgpawelprus/parallel-programming-methods/run_configs/graphs/graph1.txt
+Graph loaded. Vertices: 100000, Edges: 40000000
+Starting BFS from: 0
+Finished BFS level 1

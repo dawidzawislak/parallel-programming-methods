@@ -1,0 +1,6 @@
+Using temporary directory: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.16.209     -cp     pcj.jar:.     MolDyn     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715863.txt     4000     50 
+
+MolDyn: Symulacja 4000 czastek na 8 watkach przez 50 iteracji.

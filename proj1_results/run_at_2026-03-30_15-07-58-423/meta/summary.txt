@@ -1,0 +1,8 @@
+timestamp=2026-03-30_15-07-58-423
+run_dir=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423
+main_out_file=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/main_output.txt
+manifest_tsv=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/manifest.tsv
+jobs_tsv=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_results/run_at_2026-03-30_15-07-58-423/jobs.tsv
+benchmark_job_ids=19715847 19715848 19715849 19715850 19715851 19715852 19715853 19715854 19715855 19715856 19715857 19715858 19715859 19715860 19715861 19715862 19715863 19715864 19715865 19715866 19715867 19715868 19715869 19715870
+audit_script=/net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_slurm/audit.sh
+audit_job_id=19715871

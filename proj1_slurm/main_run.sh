@@ -46,13 +46,13 @@ fi
 #   <short_name><config_suffix>
 # so total length must be exactly 8 characters.
 declare -a JOB_DEFINITIONS=(
-    # "c_gr|proj1/graph|proj1/graph/bfs_main.sh|${ROOT_DIR}/run_configs/graphs"
-    # "c_mn|proj1/montecarlo|proj1/montecarlo/mc_main.sh|${ROOT_DIR}/run_configs/montecarlo.txt"
-    # "c_nb|proj1/nbody|proj1/nbody/nbody_main.sh|${ROOT_DIR}/run_configs/nbody.txt"
+    "c_gr|proj1/graph|proj1/graph/bfs_main.sh|${ROOT_DIR}/run_configs/graphs"
+    "c_mn|proj1/montecarlo|proj1/montecarlo/mc_main.sh|${ROOT_DIR}/run_configs/montecarlo.txt"
+    "c_nb|proj1/nbody|proj1/nbody/nbody_main.sh|${ROOT_DIR}/run_configs/nbody.txt"
 
     "j_gr|proj1_java/|proj1_java/graph_benchmark.slurm|${ROOT_DIR}/run_configs/graphs"
     "j_nb|proj1_java/|proj1_java/moldyn_benchmark.slurm|${ROOT_DIR}/run_configs/nbody.txt"
-    # "j_mc|proj1_java/|proj1_java/montecarlo_benchmark.slurm|${ROOT_DIR}/run_configs/montecarlo.txt"
+    "j_mc|proj1_java/|proj1_java/montecarlo_benchmark.slurm|${ROOT_DIR}/run_configs/montecarlo.txt"
 )
 
 # Format:
@@ -62,9 +62,11 @@ declare -a JOB_DEFINITIONS=(
 declare -a CONFIGURATIONS=(
     "8|1|n8c1"
     "4|2|n4c2"
-    # "2|4|n2c4"
-    # "1|8|n1c8"
+    "2|4|n2c4"
+    "1|8|n1c8"
 )
+
+EXECUTION_TIME_LIMIT="01:00:00"
 
 printf "job_name\tworkdir_rel\tscript_rel\tstdout\tstderr\n" >"$MANIFEST_TSV"
 printf "job_name\tjob_id\tstdout\tstderr\tscript_rel\n" >"$JOBS_TSV"
@@ -113,7 +115,7 @@ submit_benchmark_job() {
     local workdir_abs="${ROOT_DIR}/${workdir_rel}"
     local script_abs="${ROOT_DIR}/${script_rel}"
     local stdout_file="${RUN_DIR}/jobs/${job_name}.out"
-    local stderr_file="${RUN_DIR}/jobs/${job_name}.out"
+    local stderr_file="${RUN_DIR}/jobs/${job_name}.err"
 
     require_exact_length "job_name" "$job_name" 8
     require_existing_dir "$workdir_abs" "workdir for ${job_name}"
@@ -139,6 +141,7 @@ submit_benchmark_job() {
         sbatch
         --parsable
         --exclusive
+        --time="$EXECUTION_TIME_LIMIT"
         --nodes="$nodes"
         --cpus-per-task="$cpus_per_task"
         --chdir="$workdir_abs"

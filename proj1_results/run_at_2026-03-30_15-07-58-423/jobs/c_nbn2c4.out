@@ -1,0 +1,100 @@
+Nodes: 2
+MPI tasks: 2
+OMP threads: 4
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     4000     50 
+
+NBody MPI+OMP: 4000 cząstek, 50 iteracji, 2 procesów
+Total interactions = 800000000
+Elapsed time = 1.897553 s
+Throughput = 421.60 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     5500     60 
+
+NBody MPI+OMP: 5500 cząstek, 60 iteracji, 2 procesów
+Total interactions = 1815000000
+Elapsed time = 4.323009 s
+Throughput = 419.85 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     7000     70 
+
+NBody MPI+OMP: 7000 cząstek, 70 iteracji, 2 procesów
+Total interactions = 3430000000
+Elapsed time = 8.113780 s
+Throughput = 422.74 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     8500     80 
+
+NBody MPI+OMP: 8500 cząstek, 80 iteracji, 2 procesów
+Total interactions = 5780000000
+Elapsed time = 13.929034 s
+Throughput = 414.96 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     10000     90 
+
+NBody MPI+OMP: 10000 cząstek, 90 iteracji, 2 procesów
+Total interactions = 9000000000
+Elapsed time = 21.294573 s
+Throughput = 422.64 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     11500     100 
+
+NBody MPI+OMP: 11500 cząstek, 100 iteracji, 2 procesów
+Total interactions = 13225000000
+Elapsed time = 31.256685 s
+Throughput = 423.11 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     13000     100 
+
+NBody MPI+OMP: 13000 cząstek, 100 iteracji, 2 procesów
+Total interactions = 16900000000
+Elapsed time = 40.196226 s
+Throughput = 420.44 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     14500     100 
+
+NBody MPI+OMP: 14500 cząstek, 100 iteracji, 2 procesów
+Total interactions = 21025000000
+Elapsed time = 50.094592 s
+Throughput = 419.71 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     16000     100 
+
+NBody MPI+OMP: 16000 cząstek, 100 iteracji, 2 procesów
+Total interactions = 25600000000
+Elapsed time = 60.646676 s
+Throughput = 422.12 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     17500     100 
+
+NBody MPI+OMP: 17500 cząstek, 100 iteracji, 2 procesów
+Total interactions = 30625000000
+Elapsed time = 72.302061 s
+Throughput = 423.57 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     19000     100 
+
+NBody MPI+OMP: 19000 cząstek, 100 iteracji, 2 procesów
+Total interactions = 36100000000
+Elapsed time = 85.623910 s
+Throughput = 421.61 million interactions/s
+
+Running command:
+    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     20000     100 
+
+NBody MPI+OMP: 20000 cząstek, 100 iteracji, 2 procesów
+Total interactions = 40000000000
+Elapsed time = 96.323128 s
+Throughput = 415.27 million interactions/s
+N-body benchmark completed.

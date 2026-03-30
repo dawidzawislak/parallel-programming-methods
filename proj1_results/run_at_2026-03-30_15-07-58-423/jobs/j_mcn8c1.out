@@ -1,0 +1,110 @@
+Using temporary directory: /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     1000000000 
+
+MonteCarlo: Estymacja PI dla 1000000000 punktow na 8 watkach.
+Estimated Pi = 3.141496656000
+Total points = 1000000000
+Elapsed time = 5.617087 s
+Throughput = 178.03 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     3500000000 
+
+MonteCarlo: Estymacja PI dla 3500000000 punktow na 8 watkach.
+Estimated Pi = 3.141589027429
+Total points = 3500000000
+Elapsed time = 17.640131 s
+Throughput = 198.41 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     6000000000 
+
+MonteCarlo: Estymacja PI dla 6000000000 punktow na 8 watkach.
+Estimated Pi = 3.141592800667
+Total points = 6000000000
+Elapsed time = 30.202502 s
+Throughput = 198.66 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     8500000000 
+
+MonteCarlo: Estymacja PI dla 8500000000 punktow na 8 watkach.
+Estimated Pi = 3.141585536000
+Total points = 8500000000
+Elapsed time = 42.760270 s
+Throughput = 198.78 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     11000000000 
+
+MonteCarlo: Estymacja PI dla 11000000000 punktow na 8 watkach.
+Estimated Pi = 3.141585244364
+Total points = 11000000000
+Elapsed time = 55.345315 s
+Throughput = 198.75 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     13500000000 
+
+MonteCarlo: Estymacja PI dla 13500000000 punktow na 8 watkach.
+Estimated Pi = 3.141594525630
+Total points = 13500000000
+Elapsed time = 67.896364 s
+Throughput = 198.83 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     16000000000 
+
+MonteCarlo: Estymacja PI dla 16000000000 punktow na 8 watkach.
+Estimated Pi = 3.141591950750
+Total points = 16000000000
+Elapsed time = 80.463447 s
+Throughput = 198.85 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     18500000000 
+
+MonteCarlo: Estymacja PI dla 18500000000 punktow na 8 watkach.
+Estimated Pi = 3.141589234162
+Total points = 18500000000
+Elapsed time = 93.023929 s
+Throughput = 198.87 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     21000000000 
+
+MonteCarlo: Estymacja PI dla 21000000000 punktow na 8 watkach.
+Estimated Pi = 3.141583791810
+Total points = 21000000000
+Elapsed time = 105.598704 s
+Throughput = 198.87 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     23500000000 
+
+MonteCarlo: Estymacja PI dla 23500000000 punktow na 8 watkach.
+Estimated Pi = 3.141581179404
+Total points = 23500000000
+Elapsed time = 118.212621 s
+Throughput = 198.79 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     26000000000 
+
+MonteCarlo: Estymacja PI dla 26000000000 punktow na 8 watkach.
+Estimated Pi = 3.141579706154
+Total points = 26000000000
+Elapsed time = 130.737258 s
+Throughput = 198.87 million points/s
+
+Running command:
+    srun     java     -Dpcj.network.address=172.22.17.50     -cp     pcj.jar:.     MonteCarlo     /net/afscra/people/plgpawelprus/parallel-programming-methods/proj1_java/temp/pcj_nodes_19715867.txt     30000000000 
+
+MonteCarlo: Estymacja PI dla 30000000000 punktow na 8 watkach.
+Estimated Pi = 3.141580284533
+Total points = 30000000000
+Elapsed time = 150.822636 s
+Throughput = 198.91 million points/s
+MonteCarlo benchmark completed.
