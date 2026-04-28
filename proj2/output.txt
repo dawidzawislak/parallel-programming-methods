@@ -1,0 +1,8 @@
+=== COMPILING ===
+=== RUNNING GPU ===
+C[0][0] = 2048.000000
+Time: 0.299912 s
+=== RUNNING CPU ===
+C[0][0] = 2048.000000
+Time: 3.033880 s
+=== END JOB ===
