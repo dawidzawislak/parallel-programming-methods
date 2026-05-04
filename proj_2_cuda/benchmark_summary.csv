@@ -1,0 +1,3 @@
+Benchmark,Runs,Min Problem Size,Max Problem Size,Min Time (ms),Max Time (ms),Complexity,Max Perf
+Matrix Multiply,7,256,16384,0.1182,5033.01,O(n³),1777.7 GFLOPs
+Monte Carlo Pi,8,1.00e+08,1.28e+10,0.3369,29.73,O(n),430.51 GPts/s
