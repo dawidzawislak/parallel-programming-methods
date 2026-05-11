@@ -5,6 +5,8 @@
 #include <mpi.h>
 #include <omp.h>
 
+#define TILE 64
+
 int main(int argc, char *argv[])
 {
     int rank, size;

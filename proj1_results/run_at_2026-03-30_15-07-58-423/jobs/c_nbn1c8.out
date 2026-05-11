@@ -1,100 +1,51 @@
 Nodes: 1
 MPI tasks: 1
 OMP threads: 8
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     4000     50 
-
 NBody MPI+OMP: 4000 particles, 50 iterations, 1 processes
 Total interactions = 800000000
-Elapsed time = 0.532807 s
-Throughput = 1501.48 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     5500     60 
-
+Elapsed time = 0.140227 s
+Throughput = 5705.02 million interactions/s
 NBody MPI+OMP: 5500 particles, 60 iterations, 1 processes
 Total interactions = 1815000000
-Elapsed time = 1.203797 s
-Throughput = 1507.73 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     7000     70 
-
+Elapsed time = 0.311983 s
+Throughput = 5817.62 million interactions/s
 NBody MPI+OMP: 7000 particles, 70 iterations, 1 processes
 Total interactions = 3430000000
-Elapsed time = 2.271879 s
-Throughput = 1509.76 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     8500     80 
-
+Elapsed time = 0.578950 s
+Throughput = 5924.52 million interactions/s
 NBody MPI+OMP: 8500 particles, 80 iterations, 1 processes
 Total interactions = 5780000000
-Elapsed time = 3.829131 s
-Throughput = 1509.48 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     10000     90 
-
+Elapsed time = 0.975682 s
+Throughput = 5924.06 million interactions/s
 NBody MPI+OMP: 10000 particles, 90 iterations, 1 processes
 Total interactions = 9000000000
-Elapsed time = 5.966823 s
-Throughput = 1508.34 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     11500     100 
-
+Elapsed time = 1.518617 s
+Throughput = 5926.44 million interactions/s
 NBody MPI+OMP: 11500 particles, 100 iterations, 1 processes
 Total interactions = 13225000000
-Elapsed time = 8.754705 s
-Throughput = 1510.62 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     13000     100 
-
+Elapsed time = 2.238428 s
+Throughput = 5908.17 million interactions/s
 NBody MPI+OMP: 13000 particles, 100 iterations, 1 processes
 Total interactions = 16900000000
-Elapsed time = 11.183619 s
-Throughput = 1511.14 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     14500     100 
-
+Elapsed time = 2.992168 s
+Throughput = 5648.08 million interactions/s
 NBody MPI+OMP: 14500 particles, 100 iterations, 1 processes
 Total interactions = 21025000000
-Elapsed time = 13.913594 s
-Throughput = 1511.11 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     16000     100 
-
+Elapsed time = 3.561478 s
+Throughput = 5903.45 million interactions/s
 NBody MPI+OMP: 16000 particles, 100 iterations, 1 processes
 Total interactions = 25600000000
-Elapsed time = 16.935446 s
-Throughput = 1511.62 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     17500     100 
-
+Elapsed time = 4.326700 s
+Throughput = 5916.75 million interactions/s
 NBody MPI+OMP: 17500 particles, 100 iterations, 1 processes
 Total interactions = 30625000000
-Elapsed time = 20.263541 s
-Throughput = 1511.34 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     19000     100 
-
+Elapsed time = 5.215166 s
+Throughput = 5872.30 million interactions/s
 NBody MPI+OMP: 19000 particles, 100 iterations, 1 processes
 Total interactions = 36100000000
-Elapsed time = 23.881564 s
-Throughput = 1511.63 million interactions/s
-
-Running command:
-    srun     --mpi=pmix     --export=ALL\,OMPI_MCA_psec=\^munge     ./nbody     20000     100 
-
+Elapsed time = 5.862582 s
+Throughput = 6157.70 million interactions/s
 NBody MPI+OMP: 20000 particles, 100 iterations, 1 processes
 Total interactions = 40000000000
-Elapsed time = 26.459717 s
-Throughput = 1511.73 million interactions/s
-N-body benchmark completed.
+Elapsed time = 6.820323 s
+Throughput = 5864.83 million interactions/s

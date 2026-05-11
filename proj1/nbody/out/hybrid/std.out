@@ -3,17 +3,49 @@ MPI tasks: 2
 OMP threads: 4
 NBody MPI+OMP: 4000 particles, 50 iterations, 2 processes
 Total interactions = 800000000
-Elapsed time = 0.538759 s
-Throughput = 1484.89 million interactions/s
-NBody MPI+OMP: 6000 particles, 75 iterations, 2 processes
-Total interactions = 2700000000
-Elapsed time = 1.805852 s
-Throughput = 1495.14 million interactions/s
-NBody MPI+OMP: 9000 particles, 100 iterations, 2 processes
-Total interactions = 8100000000
-Elapsed time = 5.429177 s
-Throughput = 1491.94 million interactions/s
-NBody MPI+OMP: 12000 particles, 100 iterations, 2 processes
-Total interactions = 14400000000
-Elapsed time = 9.712452 s
-Throughput = 1482.63 million interactions/s
+Elapsed time = 0.140701 s
+Throughput = 5685.84 million interactions/s
+NBody MPI+OMP: 5500 particles, 60 iterations, 2 processes
+Total interactions = 1815000000
+Elapsed time = 0.311922 s
+Throughput = 5818.76 million interactions/s
+NBody MPI+OMP: 7000 particles, 70 iterations, 2 processes
+Total interactions = 3430000000
+Elapsed time = 0.593721 s
+Throughput = 5777.12 million interactions/s
+NBody MPI+OMP: 8500 particles, 80 iterations, 2 processes
+Total interactions = 5780000000
+Elapsed time = 1.000811 s
+Throughput = 5775.32 million interactions/s
+NBody MPI+OMP: 10000 particles, 90 iterations, 2 processes
+Total interactions = 9000000000
+Elapsed time = 1.560178 s
+Throughput = 5768.57 million interactions/s
+NBody MPI+OMP: 11500 particles, 100 iterations, 2 processes
+Total interactions = 13225000000
+Elapsed time = 2.308939 s
+Throughput = 5727.74 million interactions/s
+NBody MPI+OMP: 13000 particles, 100 iterations, 2 processes
+Total interactions = 16900000000
+Elapsed time = 2.954975 s
+Throughput = 5719.17 million interactions/s
+NBody MPI+OMP: 14500 particles, 100 iterations, 2 processes
+Total interactions = 21025000000
+Elapsed time = 3.686529 s
+Throughput = 5703.20 million interactions/s
+NBody MPI+OMP: 16000 particles, 100 iterations, 2 processes
+Total interactions = 25600000000
+Elapsed time = 4.579354 s
+Throughput = 5590.31 million interactions/s
+NBody MPI+OMP: 17500 particles, 100 iterations, 2 processes
+Total interactions = 30625000000
+Elapsed time = 5.526181 s
+Throughput = 5541.80 million interactions/s
+NBody MPI+OMP: 19000 particles, 100 iterations, 2 processes
+Total interactions = 36100000000
+Elapsed time = 6.588468 s
+Throughput = 5479.27 million interactions/s
+NBody MPI+OMP: 20000 particles, 100 iterations, 2 processes
+Total interactions = 40000000000
+Elapsed time = 7.615562 s
+Throughput = 5252.40 million interactions/s

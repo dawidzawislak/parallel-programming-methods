@@ -1,0 +1,149 @@
+\section{Analiza wydajności BFS (Breadth-First Search)}
+
+\subsection{Konfiguracje testowe}
+
+Przeprowadzono eksperymenty dla czterech konfiguracji równoległych (łącznie 8 rdzeni):
+\begin{itemize}
+    \item \textbf{n1c8}: 1 węzeł × 8 wątków OpenMP (czysty OpenMP)
+    \item \textbf{n2c4}: 2 węzły × 4 wątki (hybrid)
+    \item \textbf{n4c2}: 4 węzły × 2 wątki (hybrid)
+    \item \textbf{n8c1}: 8 węzłów × 1 wątek (czysty MPI)
+\end{itemize}
+
+Testowano algorytm BFS (przeszukiwanie grafu wszerz) dla czterech grafów o rosnącym rozmiarze:
+\begin{itemize}
+    \item Graph1: 100,000 węzłów, 40M krawędzi
+    \item Graph2: 500,000 węzłów, 200M krawędzi
+    \item Graph3: 1,000,000 węzłów, 400M krawędzi
+    \item Graph4: 2,000,000 węzłów, 800M krawędzi
+\end{itemize}
+
+\subsection{Obserwacje}
+
+W przeciwieństwie do Monte Carlo, dla BFS \textbf{wybór architektury ma krytyczne znaczenie}:
+
+\begin{table}[h]
+\centering
+\caption{Przepustowość BFS [Medges/s] dla różnych konfiguracji}
+\label{tab:bfs_results}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Graf} & \textbf{n1c8} & \textbf{n2c4} & \textbf{n4c2} & \textbf{n8c1} \\
+\hline
+Graph1 (100K, 40M)    & \textbf{117.95} & 102.20 & 98.65 & 102.23 \\
+Graph2 (500K, 200M)   & \textbf{114.39} & 102.94 & 97.74 & 84.97 \\
+Graph3 (1M, 400M)     & \textbf{109.33} & 93.09  & 92.69 & 93.34 \\
+Graph4 (2M, 800M)     & \textbf{103.20} & 92.07  & 84.83 & 19.17 \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Dominacja OpenMP.} Konfiguracja n1c8 (czysty OpenMP) osiąga konsekwentnie najlepsze wyniki dla wszystkich rozmiarów grafów, z przewagą:
+\begin{itemize}
+    \item Graph1: +15\% nad średnią pozostałych
+    \item Graph2: +25\% nad średnią pozostałych
+    \item Graph4: \textbf{+439\%} nad czystym MPI (n8c1)!
+\end{itemize}
+
+\paragraph{Katastrofalna degradacja MPI dla dużych grafów.} Dla największego grafu (Graph4) czysty MPI (n8c1) osiąga jedynie \textbf{19.17 Medges/s}, co stanowi \textbf{5.4× spowolnienie} względem OpenMP. Jest to dramatyczny spadek wydajności.
+
+\paragraph{Degradacja wraz z liczbą węzłów.} Wydajność systematycznie maleje wraz ze wzrostem liczby procesów MPI:
+\begin{equation}
+    \text{Throughput}(n1c8) > \text{Throughput}(n2c4) > \text{Throughput}(n4c2) \geq \text{Throughput}(n8c1)
+\end{equation}
+
+\subsection{Wyjaśnienie zjawiska}
+
+BFS jest algorytmem \textbf{inherentnie sekwencyjnym w sensie poziomów} -- wymaga synchronizacji między kolejnymi poziomami drzewa przeszukiwania.
+
+\subsubsection{Struktura algorytmu BFS}
+
+Algorytm BFS przetwarza graf poziom po poziomie:
+
+\begin{lstlisting}[language=C]
+while (!currentLevel.empty()) {
+    // Równoległe przetwarzanie węzłów na bieżącym poziomie
+    #pragma omp parallel for
+    for (int i = 0; i < currentLevel.size(); i++) {
+        int node = currentLevel[i];
+        for (int neighbor : graph[node]) {
+            if (!visited[neighbor]) {
+                nextLevel.push(neighbor);
+                visited[neighbor] = true;
+            }
+        }
+    }
+    
+    // SYNCHRONIZACJA - bariera między poziomami
+    currentLevel = nextLevel;
+    nextLevel.clear();
+}
+\end{lstlisting}
+
+Kluczowy problem: \textbf{każdy poziom wymaga globalnej synchronizacji} przed przejściem do następnego.
+
+\subsubsection{Overhead synchronizacji w MPI}
+
+W architekturze MPI synchronizacja między poziomami wymaga:
+
+\begin{lstlisting}[language=C]
+// Każdy proces ma lokalną listę następnego poziomu
+MPI_Allgather(localNextLevel, ..., globalNextLevel, ...);
+
+// Synchronizacja tablicy odwiedzonych węzłów
+MPI_Allreduce(localVisited, globalVisited, ..., MPI_LOR, ...);
+\end{lstlisting}
+
+Dla grafu o średnicy $d$ (liczba poziomów w drzewie BFS):
+\begin{itemize}
+    \item Liczba synchronizacji MPI: $O(d)$
+    \item Koszt każdej synchronizacji: \textasciitilde{}1-10 $\mu$s latencji + transfer danych
+    \item Dla graph4: $d \approx$ kilkaset poziomów $\rightarrow$ setki operacji komunikacji zbiorowej
+\end{itemize}
+
+\textbf{W OpenMP}: synchronizacja przez barierę w pamięci współdzielonej -- rzędu nanosekund, brak transferu przez sieć.
+
+\subsubsection{Niezrównoważone obciążenie}
+
+Rozmiar kolejnych poziomów w BFS jest \textbf{silnie nierównomierny}:
+\begin{itemize}
+    \item Poziom 0: 1 węzeł (źródło)
+    \item Poziomy środkowe: dziesiątki tysięcy węzłów
+    \item Poziomy końcowe: pojedyncze węzły
+\end{itemize}
+
+W architekturze MPI z podziałem węzłów między procesy, większość poziomów ma słabe obciążenie -- część procesów czeka bezczynnie, podczas gdy inne przetwarzają swoje węzły.
+
+\subsubsection{Współdzielona tablica visited[]}
+
+Wszystkie wątki/procesy muszą aktualizować i sprawdzać wspólną tablicę \texttt{visited[]}:
+
+\textbf{OpenMP}: Tablica w pamięci współdzielonej, dostęp z cache L1/L2, mechanizmy atomic sprawnie obsługują konkurencję.
+
+\textbf{MPI}: Każdy proces ma lokalną kopię, wymaga ciągłej synchronizacji między procesami. Dla 2M węzłów: 2MB danych do synchronizacji przy każdym poziomie.
+
+\subsection{Wnioski}
+
+\begin{enumerate}
+    \item Dla algorytmów wymagających \textbf{częstej synchronizacji} (jak BFS), architektura z pamięcią współdzieloną (OpenMP) ma \textbf{zdecydowaną przewagę} nad architekturą rozproszoną (MPI).
+    
+    \item Overhead synchronizacji MPI rośnie wraz z:
+    \begin{itemize}
+        \item Liczbą poziomów w grafie (średnica grafu)
+        \item Rozmiarem danych do synchronizacji (liczba węzłów)
+        \item Liczbą procesów MPI (więcej uczestników komunikacji zbiorowej)
+    \end{itemize}
+    
+    \item Dla największego grafu (Graph4), czysty MPI jest \textbf{5.4× wolniejszy} niż czysty OpenMP -- katastrofalny wynik pokazujący niewłaściwość architektury rozproszonej dla tego typu problemów.
+    
+    \item Konfiguracje hybrydowe (n2c4, n4c2) stanowią kompromis, ale nadal przegrywają z czystym OpenMP ze względu na konieczność synchronizacji międzywęzłowej.
+    
+    \item \textbf{Rekomendacja praktyczna}:
+    \begin{itemize}
+        \item Dla BFS i podobnych algorytmów grafowych: \textbf{zawsze używaj czystego OpenMP} (n1c8)
+        \item Unikaj architektur rozproszonych (MPI) dla algorytmów wymagających synchronizacji między iteracjami
+        \item Jeśli graf nie mieści się w pamięci jednego węzła, rozważ algorytmy out-of-core lub partycjonowanie grafu
+    \end{itemize}
+    
+    \item BFS stanowi przykład problemu o \textbf{słabej równoległości} -- teoretyczny speedup jest ograniczony przez sekwencyjną naturę poziomów i overhead synchronizacji.
+\end{enumerate}

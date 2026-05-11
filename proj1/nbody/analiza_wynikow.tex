@@ -1,0 +1,83 @@
+\section{Analiza wydajności OpenMP vs MPI}
+
+\subsection{Konfiguracje testowe}
+
+Przeprowadzono eksperymenty dla czterech konfiguracji równoległych (łącznie 8 rdzeni, 5000 iteracji):
+\begin{itemize}
+    \item \textbf{n1c8}: 1 węzeł × 8 wątków OpenMP (czysty OpenMP)
+    \item \textbf{n2c4}: 2 węzły × 4 wątki (hybrid)
+    \item \textbf{n4c2}: 4 węzły × 2 wątki (hybrid)
+    \item \textbf{n8c1}: 8 węzłów × 1 wątek (czysty MPI)
+\end{itemize}
+
+\subsection{Obserwacje}
+
+Z wykresów wynika charakterystyczny \textbf{punkt przejścia wydajności}:
+\begin{itemize}
+    \item $N \leq 80$: Najlepsza \textbf{n1c8} (OpenMP) -- do 524 Minteract/s
+    \item $N = 80-140$: Najlepsza \textbf{n2c4} (hybrid 2×4)
+    \item $N \geq 140$: Dominuje \textbf{n8c1} (MPI) -- do 2630 Minteract/s
+\end{itemize}
+
+Skrajne przypadki:
+\begin{itemize}
+    \item $N=50$: OpenMP \textbf{2.96× szybszy} od MPI (339 vs 115 Minteract/s)
+    \item $N=380$: MPI \textbf{7.09× szybszy} od OpenMP (2631 vs 371 Minteract/s)
+\end{itemize}
+
+\subsection{Wyjaśnienie zjawiska}
+
+\subsubsection{Przewaga OpenMP dla małych N ($N < 100$)}
+
+\textbf{Overhead komunikacji MPI międzywęzłowej}. W konfiguracji n8c1 (8 węzłów) procesy komunikują się przez sieć InfiniBand. W każdej iteracji następuje synchronizacja pozycji:
+
+\begin{lstlisting}[language=C]
+MPI_Allgatherv(localX, localSize, MPI_DOUBLE,
+               X, counts, displs, MPI_DOUBLE, MPI_COMM_WORLD);
+// + 2 kolejne dla Y, Z
+\end{lstlisting}
+
+Dla $N=50$ i 5000 iteracji to 15000 operacji komunikacji zbiorowej. Latencja każdej operacji (\textasciitilde{}1-5~$\mu$s) i synchronizacja międzywęzłowa stanowią znaczący narzut, gdy liczba obliczeń ($N^2 = 2500$ interakcji/iterację) jest mała.
+
+W OpenMP (n1c8) wszystkie wątki działają w jednym węźle -- brak transmisji przez sieć, dane dostępne natychmiast w pamięci współdzielonej.
+
+\subsubsection{Przewaga MPI dla dużych N ($N > 150$)}
+
+\textbf{Cache coherence overhead w OpenMP}. Wszystkie 8 wątków współdzieli tablice pozycji i jednocześnie czytają te same dane:
+
+\begin{lstlisting}[language=C]
+#pragma omp for
+for (int i = startIdx; i < endIdx; i++) {
+    for (int j = 0; j < N; j++) {
+        double dx = X[i] - X[j];  // Wszyscy czytają X[j]
+        // ... obliczenia sił ...
+    }
+}
+\end{lstlisting}
+
+Dla $N=200$: rozmiar danych = $3 \times 200 \times 8$ bajtów = 4.8 KB. Dane są ciągle wymieniane między cache L1/L2 różnych rdzeni (protokół MESI), generując opóźnienia dziesiątek cykli zegarowych.
+
+\textbf{W MPI}: każdy proces ma \textbf{prywatną kopię} tablic w swoim cache -- zero ruchu związanego ze spójnością cache.
+
+\textbf{Dominacja obliczeń}. Dla $N=200$: $N^2 = 40000$ interakcji/iterację, przy 5000 iteracji = 200 mln obliczeń. Czas obliczeń przewyższa czas komunikacji (raz na iterację), więc overhead MPI staje się zaniedbywalny.
+
+\subsection{Wnioski}
+
+\begin{enumerate}
+    \item \textbf{Punkt przejścia} wydajności znajduje się w okolicy $N \approx 100-140$. Poniżej dominuje OpenMP (pamięć współdzielona), powyżej MPI (pamięć rozproszona).
+    
+    \item Kluczowy czynnik to stosunek czasu obliczeń do komunikacji:
+    \begin{equation}
+        R = \frac{T_{compute}}{T_{comm}} = \frac{O(N^2)}{O(N)}
+    \end{equation}
+    Dla małych N overhead komunikacji MPI dominuje. Dla dużych N overhead cache coherence w OpenMP dominuje.
+    
+    \item Konfiguracje hybrydowe (n2c4, n4c2) oferują kompromis -- n2c4 optymalna dla $N=80-140$.
+    
+    \item \textbf{Rekomendacje praktyczne}:
+    \begin{itemize}
+        \item $N < 100$: Użyj czystego OpenMP (n1c8)
+        \item $N \in [100, 200]$: Użyj hybryd (n2c4 lub n4c2)
+        \item $N > 200$: Użyj czystego MPI (n8c1)
+    \end{itemize}
+\end{enumerate}
