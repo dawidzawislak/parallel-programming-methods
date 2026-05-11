@@ -1,0 +1,5 @@
+ gcccore/12.3.0 loaded.
+ zlib/1.2.13-gcccore-12.3.0 loaded.
+ binutils/2.40-gcccore-12.3.0 loaded.
+ gcc/12.3.0 loaded.
+ cuda/12.9.1 loaded.

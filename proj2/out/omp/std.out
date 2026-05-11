@@ -1,5 +1,9 @@
 === COMPILING ===
 === RUNNING CPU ===
-C[0][0] = 2048.000000
-Time: 0.298886 s
+Matrix multiply on CPU (OpenMP): 512x512
+Kernel time: 20.905 ms
+C[0][0] = 6120.0
+C[511][511] = 6135.0
+Checksum = 1610604025.000
+matrix_multiply_cpu,512,8,20.905330,1610604025.000000
 === END JOB ===

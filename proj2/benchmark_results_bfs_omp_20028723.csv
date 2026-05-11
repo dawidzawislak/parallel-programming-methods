@@ -1,0 +1,4 @@
+benchmark,problem_size,gpu_count,time_ms,metric1,metric2
+matrix_multiply_cpu,512,8,53.474438,1610604025.000000,
+matrix_multiply_cpu,1024,8,408.683607,12884877311.000000,
+matrix_multiply_cpu,2048,8,3111.974673,103079206915.000000,

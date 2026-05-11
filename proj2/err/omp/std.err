@@ -10,7 +10,6 @@
  openssl/3 loaded.
  libevent/2.1.12-gcccore-14.3.0 loaded.
  ucx/1.19.0-gcccore-14.3.0 loaded.
- cuda/12.4.0 unloaded.
  cuda/12.9.1 loaded.
  gdrcopy/2.5-gcccore-14.3.0 loaded.
  ucx-cuda/1.19.0-gcccore-14.3.0-cuda-12.9.1 loaded.
@@ -19,7 +18,3 @@
  prrte/3.0.11-gcccore-14.3.0 loaded.
  ucc/1.4.4-gcccore-14.3.0 loaded.
  openmpi/5.0.8-gcc-14.3.0 loaded.
-
-The following have been reloaded with a version change:
-  1) cuda/12.4.0 => cuda/12.9.1
-

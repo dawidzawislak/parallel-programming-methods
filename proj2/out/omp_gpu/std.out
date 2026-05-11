@@ -1,5 +1,9 @@
 === COMPILING ===
 === RUNNING GPU ===
-C[0][0] = 2048.000000
-Time: 0.246667 s
+Matrix multiply on GPU (OpenMP offload): 512x512
+Kernel time: 174.477 ms
+C[0][0] = 6120.0
+C[511][511] = 6135.0
+Checksum = 1610604025.000
+matrix_multiply_omp_gpu,512,1,174.476795,1610604025.000000
 === END JOB ===

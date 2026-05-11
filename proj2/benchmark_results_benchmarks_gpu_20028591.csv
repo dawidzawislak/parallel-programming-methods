@@ -1,0 +1,7 @@
+benchmark,problem_size,gpu_count,time_ms,metric1,metric2
+matrix_multiply_omp_gpu,256,1,1946.602405,201324537.000000,
+matrix_multiply_omp_gpu,512,1,168.424195,1610604025.000000,
+matrix_multiply_omp_gpu,1024,1,248.137645,12884877311.000000,
+matrix_multiply_omp_gpu,2048,1,1319.334290,103079206915.000000,
+matrix_multiply_omp_gpu,4096,1,9633.850154,824633651206.000000,
+matrix_multiply_omp_gpu,8192,1,74985.167161,6597069504524.000000,

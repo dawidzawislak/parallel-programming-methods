@@ -1,0 +1,13 @@
+ gcccore/12.3.0 loaded.
+ zlib/1.2.13-gcccore-12.3.0 loaded.
+ binutils/2.40-gcccore-12.3.0 loaded.
+ gcc/12.3.0 loaded.
+ cuda/12.9.1 loaded.
+ptxas fatal   : Value 'sm_35' is not defined for option 'gpu-name'
+nvptx-as: ptxas returned 255 exit status
+mkoffload: fatal error: x86_64-pc-linux-gnu-accel-nvptx-none-gcc returned 1 exit status
+compilation terminated.
+lto-wrapper: fatal error: /net/software/testing/software/GCCcore/12.3.0/libexec/gcc/x86_64-pc-linux-gnu/12.3.0//accel/nvptx-none/mkoffload returned 1 exit status
+compilation terminated.
+/net/software/testing/software/binutils/2.40-GCCcore-12.3.0/bin/ld: error: lto-wrapper failed
+collect2: error: ld returned 1 exit status

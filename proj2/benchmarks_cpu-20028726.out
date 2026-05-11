@@ -1,0 +1,21 @@
+Script directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Current working directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Files in current directory:
+-rw-r--r-- 1 plgdawidz112002 plgrid 1.9K May  4 21:54 matrix_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 21:53 matrix_gpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 22:36 mc_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 3.3K May  4 23:05 mc_gpu.c
+-rwxr-xr-x 1 plgdawidz112002 plgrid 3.6K May  4 23:06 run_benchmarks.sh
+-rwxr-xr-x 1 plgdawidz112002 plgrid 3.2K May  4 23:27 run_benchmarks_cpu.sh
+Running on node: ac0512
+Compiling kernels...
+Starting adaptive runs (target ~100000.0 ms)...
+Running matrix_cpu n=512
+matrix_multiply_cpu,512,32,19.682670,1610604025.000000
+Running matrix_cpu n=1024
+matrix_multiply_cpu,1024,32,131.576176,12884877311.000000
+Running matrix_cpu n=2048
+matrix_multiply_cpu,2048,32,1034.646762,103079206915.000000
+Running matrix_cpu n=4096
+matrix_multiply_cpu,4096,32,39651.317860,824633651206.000000
+Running matrix_cpu n=8192

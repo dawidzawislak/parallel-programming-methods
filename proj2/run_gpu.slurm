@@ -16,7 +16,7 @@ module list
 export OMP_TARGET_OFFLOAD=MANDATORY
 
 echo "=== COMPILING ==="
-gcc -fopenmp -foffload=nvptx-none -O2 matrix_gpu.c -o matrix_gpu
+gcc -fopenmp -foffload=nvptx-none="-misa=sm_70 -lm" -O3 matrix_gpu.c -o matrix_gpu -lm
 
 echo "=== RUNNING GPU ==="
 ./matrix_gpu

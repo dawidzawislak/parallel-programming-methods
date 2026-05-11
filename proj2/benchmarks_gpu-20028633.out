@@ -1,0 +1,26 @@
+Script directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Current working directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Files in current directory:
+-rw-r--r-- 1 plgdawidz112002 plgrid 1.9K May  4 21:54 matrix_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 21:53 matrix_gpu.c
+-rwxr-xr-x 1 plgdawidz112002 plgrid 3.9K May  4 22:30 run_benchmarks.sh
+Running on node: ag0009
+Compiling kernels...
+Starting adaptive runs (target ~100000.0 ms)...
+Running matrix_gpu n=256
+matrix_multiply_omp_gpu,256,1,151.552011,201324537.000000
+Running matrix_gpu n=512
+matrix_multiply_omp_gpu,512,1,154.251356,1610604025.000000
+Running matrix_gpu n=1024
+matrix_multiply_omp_gpu,1024,1,246.316716,12884877311.000000
+Running matrix_gpu n=2048
+matrix_multiply_omp_gpu,2048,1,1322.617478,103079206915.000000
+Running matrix_gpu n=4096
+matrix_multiply_omp_gpu,4096,1,9653.129254,824633651206.000000
+Running matrix_gpu n=8192
+matrix_multiply_omp_gpu,8192,1,75055.958611,6597069504524.000000
+Running matrix_gpu n=16384
+matrix_multiply_omp_gpu,16384,1,735579.762386,52776558133268.000000
+Reached target for matrix with n=16384 (time 735.58s)
+All runs appended to benchmark_results_benchmarks_gpu_20028633.csv
+Note: make /net/people/plgrid/plgdawidz112002/mpr/proj2/run_benchmarks.sh executable: chmod +x run_benchmarks.sh

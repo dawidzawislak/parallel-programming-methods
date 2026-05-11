@@ -1,0 +1,8 @@
+Script directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Current working directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Files in current directory:
+-rw-r--r-- 1 plgdawidz112002 plgrid 1.9K May  4 21:54 matrix_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 21:53 matrix_gpu.c
+-rwxr-xr-x 1 plgdawidz112002 plgrid 3.9K May  4 22:06 run_benchmarks.sh
+Running on node: ag0009
+Compiling kernels...

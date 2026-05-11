@@ -1,0 +1,43 @@
+Script directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Current working directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Files in current directory:
+-rw-r--r-- 1 plgdawidz112002 plgrid 1.9K May  4 21:54 matrix_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 21:53 matrix_gpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 22:36 mc_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 3.1K May  4 22:36 mc_gpu.c
+-rwxr-xr-x 1 plgdawidz112002 plgrid 3.6K May  4 22:36 run_benchmarks.sh
+Running on node: ag0009
+Compiling kernels...
+Starting adaptive runs (target ~100000.0 ms)...
+Running matrix_gpu n=512
+matrix_multiply_omp_gpu,512,1,173.217455,1610604025.000000
+Running matrix_gpu n=1024
+matrix_multiply_omp_gpu,1024,1,256.608534,12884877311.000000
+Running matrix_gpu n=2048
+matrix_multiply_omp_gpu,2048,1,1329.131341,103079206915.000000
+Running matrix_gpu n=4096
+matrix_multiply_omp_gpu,4096,1,9643.697350,824633651206.000000
+Running matrix_gpu n=8192
+matrix_multiply_omp_gpu,8192,1,75027.739594,6597069504524.000000
+Running matrix_gpu n=16384
+matrix_multiply_omp_gpu,16384,1,742022.040651,52776558133268.000000
+Reached target for matrix with n=16384 (time 742.022s)
+Running mc_gpu points=100000000
+monte_carlo_pi_omp_gpu,100000000,1,216.600280,3.14166844,78496471
+Running mc_gpu points=200000000
+monte_carlo_pi_omp_gpu,200000000,1,153.878857,3.14165031,157043509
+Running mc_gpu points=400000000
+monte_carlo_pi_omp_gpu,400000000,1,170.897110,3.14162770,314136230
+Running mc_gpu points=800000000
+monte_carlo_pi_omp_gpu,800000000,1,207.713544,3.14162222,628322835
+Running mc_gpu points=1600000000
+monte_carlo_pi_omp_gpu,1600000000,1,284.331179,3.14160972,1256640672
+Running mc_gpu points=3200000000
+monte_carlo_pi_omp_gpu,3200000000,1,431.676056,3.14161345,2513284328
+Running mc_gpu points=6400000000
+monte_carlo_pi_omp_gpu,6400000000,1,732.132163,3.14161213,5026566536
+Running mc_gpu points=12800000000
+monte_carlo_pi_omp_gpu,12800000000,1,1334.590093,3.14159443,10053076427
+Reached max_points=10000000000; stopping scaling for mc_gpu
+All runs appended to benchmark_results_benchmarks_gpu_20028643.csv
+Note: make /net/people/plgrid/plgdawidz112002/mpr/proj2/run_benchmarks.sh executable: chmod +x run_benchmarks.sh

@@ -1,0 +1,28 @@
+Script directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Current working directory: /net/people/plgrid/plgdawidz112002/mpr/proj2
+Files in current directory:
+-rw-r--r-- 1 plgdawidz112002 plgrid 1.9K May  4 21:54 matrix_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 21:53 matrix_gpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 2.1K May  4 22:36 mc_cpu.c
+-rw-r--r-- 1 plgdawidz112002 plgrid 3.1K May  4 22:36 mc_gpu.c
+-rwxr-xr-x 1 plgdawidz112002 plgrid 3.6K May  4 22:56 run_benchmarks.sh
+Running on node: ag0009
+Compiling kernels...
+Starting adaptive runs (target ~100000.0 ms)...
+Running mc_gpu points=200000000
+monte_carlo_pi_omp_gpu,200000000,1,166.517413,3.14165031,157043509
+Running mc_gpu points=400000000
+monte_carlo_pi_omp_gpu,400000000,1,177.396940,3.14162770,314136230
+Running mc_gpu points=800000000
+monte_carlo_pi_omp_gpu,800000000,1,220.712554,3.14162222,628322835
+Running mc_gpu points=1600000000
+monte_carlo_pi_omp_gpu,1600000000,1,294.160824,3.14160972,1256640672
+Running mc_gpu points=3200000000
+monte_carlo_pi_omp_gpu,3200000000,1,431.381271,3.14161345,2513284328
+Running mc_gpu points=6400000000
+monte_carlo_pi_omp_gpu,6400000000,1,729.879057,3.14161213,5026566536
+Running mc_gpu points=12800000000
+monte_carlo_pi_omp_gpu,12800000000,1,1328.301432,3.14159443,10053076427
+Reached max_points=10000000000; stopping scaling for mc_gpu
+All runs appended to benchmark_results_benchmarks_gpu_20028661.csv
+Note: make /net/people/plgrid/plgdawidz112002/mpr/proj2/run_benchmarks.sh executable: chmod +x run_benchmarks.sh
